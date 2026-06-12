@@ -28,6 +28,10 @@ export interface SiteContent {
     changelog: string;
     coffee: string;
   };
+  home: {
+    /** Label of the link below the changelog tail, e.g. "full changelog →". */
+    fullChangelogLabel: string;
+  };
   commandK: {
     /** The fixed bottom-right hint chip, e.g. "⌘K". */
     hint: string;

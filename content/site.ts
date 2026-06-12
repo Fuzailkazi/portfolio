@@ -21,6 +21,9 @@ export const site: SiteContent = {
     changelog: "Changelog",
     coffee: "Coffee",
   },
+  home: {
+    fullChangelogLabel: "full changelog →",
+  },
   commandK: {
     hint: "⌘K",
     title: "✦ Fuzail AI",
