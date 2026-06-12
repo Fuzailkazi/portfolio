@@ -1,10 +1,7 @@
 import type { NextConfig } from "next";
 
-const nextConfig: NextConfig = {
-  output: "export",
-  images: {
-    unoptimized: true,
-  },
-};
+// No `output: "export"` — the /api/chat route handler needs a server runtime
+// (deployed as a serverless function on Vercel).
+const nextConfig: NextConfig = {};
 
 export default nextConfig;
