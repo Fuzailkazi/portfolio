@@ -5,24 +5,29 @@ export const changelogPage: ChangelogPageContent = {
   label: "Changelog",
 };
 
-// Maps 1:1 to the `logs` array in portfolio-final-design.html.
+// Newest first. The top entry's version is the chip next to "Fuzail" on home,
+// and the top 3 are the changelog tail. Add a new line at the top each month.
 export const changelog: ChangelogEntry[] = [
+  { version: "v3.1", date: "Apr 2026", entry: "Stepped into Chief of Staff at ArmorIQ" },
   {
-    version: "v2.6",
-    date: "Jun 2026",
-    entry: "Shipped exec reporting automation — deck-building down 60%",
+    version: "v3.0.1",
+    date: "Dec 2025",
+    entry: "Graduated the NextLeap PM fellowship as a Top Fellow",
   },
-  { version: "v2.5", date: "May 2026", entry: "Ran ArmorIQ launch end-to-end, 5 weeks" },
+  { version: "v3.0", date: "Oct 2025", entry: "Joined ArmorIQ as AI PM" },
   {
-    version: "v2.4",
-    date: "Apr 2026",
-    entry: "Built internal AI assistant for first-pass analysis",
+    version: "v2.0",
+    date: "2024–25",
+    entry: "Product Manager at AccelChain, 18 months owning product end to end",
   },
-  { version: "v2.3", date: "Mar 2026", entry: "Restructured hiring loop — close rate up" },
-  { version: "v2.2", date: "Feb 2026", entry: "Killed status meetings — one living doc" },
-  { version: "v2.1", date: "Jan 2026", entry: "Joined ArmorIQ as AI PM / Chief of Staff" },
-  { version: "v1.4", date: "2025", entry: "Previous role — your story here" },
-  { version: "v1.2", date: "2024", entry: "First product shipped end-to-end" },
-  { version: "v1.0", date: "2023", entry: "Graduated, entered the arena" },
+  { version: "v1.4", date: "2024", entry: "Graduated B.Tech, MIT ADT University" },
+  { version: "v1.3", date: "2023", entry: "DevRel at DApp World, grew the developer community" },
+  {
+    version: "v1.2",
+    date: "2022–24",
+    entry: "VP & founding member, MIT Cybersecurity & Blockchain Club",
+  },
+  { version: "v1.1", date: "2022", entry: "Product management intern at ERC" },
+  { version: "v1.0", date: "2020", entry: "Started at MIT ADT University" },
   { version: "v0.1", date: "——", entry: "Born. Mostly crying. No roadmap." },
 ];

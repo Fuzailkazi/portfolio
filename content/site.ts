@@ -4,13 +4,13 @@ export const site: SiteContent = {
   name: "Fuzail Kazi",
   logo: "Fuzail",
   role: "AI PM / Chief of Staff at ArmorIQ.",
-  positioning: "I sit between strategy and shipping.",
+  positioning: "I build AI products and keep the company executing.",
   url: "https://example.com",
   social: {
-    github: "https://github.com/placeholder",
-    linkedin: "https://linkedin.com/in/placeholder",
-    x: "https://x.com/placeholder",
-    email: "hello@example.com",
+    github: "https://github.com/Fuzailkazi",
+    linkedin: "https://www.linkedin.com/in/fuzail-kazi/",
+    x: "https://x.com/fuzailkazi_",
+    email: "fuzailnazimkazi@gmail.com",
   },
   pages: {
     home: "Home",
