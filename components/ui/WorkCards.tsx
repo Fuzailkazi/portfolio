@@ -21,7 +21,7 @@ function Card({ item, flipped, onFlip }: { item: WorkItem; flipped: boolean; onF
       }}
       className={`cursor-pointer rounded p-4 transition-all duration-[250ms] hover:-translate-y-px hover:brightness-[0.985] ${
         flipped ? "bg-green-bg" : "bg-red-bg"
-      } ${item.full ? "col-span-2" : ""}`}
+      } ${item.full ? "col-span-2 max-[720px]:col-span-1" : ""}`}
     >
       <motion.div
         key={String(flipped)}
@@ -101,7 +101,7 @@ export function WorkCards() {
         </span>
       </div>
       <p className="mb-7 text-center font-mono text-[12px] text-text-3">{workPage.scope}</p>
-      <div className="mx-auto grid max-w-[880px] grid-cols-2 gap-[14px]">
+      <div className="mx-auto grid max-w-[880px] grid-cols-2 gap-[14px] max-[720px]:grid-cols-1">
         {work.map((item, i) => (
           <Card key={item.slug} item={item} flipped={flips[i]} onFlip={() => flipOne(i)} />
         ))}

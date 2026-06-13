@@ -32,6 +32,15 @@ export interface SiteContent {
     /** Label of the link below the changelog tail, e.g. "full changelog →". */
     fullChangelogLabel: string;
   };
+  /** Unlisted /coffee page. URLs come from env (CAL_URL, RESUME_URL); labels live here. */
+  coffee: {
+    title: string;
+    note: string;
+    calLabel: string;
+    emailLabel: string;
+    resumeLabel: string;
+    unavailable: string;
+  };
   notes: {
     intro: string;
     backLabel: string;

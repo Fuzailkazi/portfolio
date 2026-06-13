@@ -24,6 +24,14 @@ export const site: SiteContent = {
   home: {
     fullChangelogLabel: "full changelog →",
   },
+  coffee: {
+    title: "Grab coffee?",
+    note: "Unlisted on purpose. If you have this link, you already know me — pick whatever's easiest.",
+    calLabel: "Book a time →",
+    emailLabel: "Email me",
+    resumeLabel: "Resume (PDF) →",
+    unavailable: "Not set up right now.",
+  },
   notes: {
     intro: "Occasional takes from my seat. No schedule promised.",
     backLabel: "← Notes",

@@ -102,9 +102,13 @@ export function CommandK() {
       <button
         type="button"
         onClick={() => setOpen(true)}
-        className="fixed right-6 bottom-5 cursor-pointer rounded-[6px] border border-border px-[9px] py-[3px] font-mono text-[12px] text-text-3"
+        aria-label={site.commandK.title}
+        className="fixed right-6 bottom-5 cursor-pointer rounded-[6px] border border-border px-[9px] py-[3px] font-mono text-[12px] text-text-3 max-[720px]:bottom-[84px] max-[720px]:flex max-[720px]:h-11 max-[720px]:w-11 max-[720px]:items-center max-[720px]:justify-center max-[720px]:rounded-full max-[720px]:border-border-2 max-[720px]:bg-bg max-[720px]:p-0 max-[720px]:text-[18px] max-[720px]:text-accent max-[720px]:shadow-[0_4px_16px_rgba(0,0,0,0.12)]"
       >
-        {site.commandK.hint}
+        <span className="max-[720px]:hidden">{site.commandK.hint}</span>
+        <span aria-hidden className="hidden max-[720px]:inline">
+          ✦
+        </span>
       </button>
 
       {open && (
@@ -118,7 +122,7 @@ export function CommandK() {
             role="dialog"
             aria-modal="true"
             aria-label={site.commandK.title}
-            className="w-[480px] rounded-[14px] bg-bg p-5 shadow-[0_20px_60px_rgba(0,0,0,0.15)]"
+            className="w-[480px] rounded-[14px] bg-bg p-5 shadow-[0_20px_60px_rgba(0,0,0,0.15)] max-[720px]:w-[calc(100vw-32px)]"
           >
             <div className="mb-[14px] flex justify-between">
               <b className="text-[14px] font-semibold">{site.commandK.title}</b>

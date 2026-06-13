@@ -1,22 +1,10 @@
-"use client";
-
 import Link from "next/link";
-import { motion } from "framer-motion";
 import { changelog } from "@/content/changelog";
 import { site } from "@/content/site";
 
 // Reference rows fade to 100% / 70% / 45% top-down.
 const ROW_OPACITY = [1, 0.7, 0.45];
-
-const container = {
-  hidden: {},
-  visible: { transition: { staggerChildren: 0.12 } },
-};
-
-const row = (targetOpacity: number) => ({
-  hidden: { opacity: 0, y: 6 },
-  visible: { opacity: targetOpacity, y: 0, transition: { duration: 0.3 } },
-});
+const STAGGER_MS = 120;
 
 /**
  * Tail display form, as in the reference: entry up to the em-dash,
@@ -31,35 +19,35 @@ function tailText(entry: string, date: string): string {
   return `${lowered} · ${month}`;
 }
 
+/** CSS custom props for the per-row fade (see .tail-row-in in globals.css). */
+function rowStyle(index: number, opacity: number): React.CSSProperties {
+  return { "--d": `${index * STAGGER_MS}ms`, "--o": opacity } as React.CSSProperties;
+}
+
 export function ChangelogTail() {
   const latest = changelog.slice(0, 3);
 
   return (
-    <motion.div
-      className="my-9 font-mono text-[13px]"
-      initial="hidden"
-      animate="visible"
-      variants={container}
-    >
+    <div className="my-9 font-mono text-[13px]">
       {latest.map((entry, i) => (
-        <motion.div
+        <div
           key={entry.version}
-          variants={row(ROW_OPACITY[i])}
-          className="mb-[7px] flex items-center gap-2"
+          style={rowStyle(i, ROW_OPACITY[i])}
+          className="tail-row-in mb-[7px] flex items-center gap-2"
         >
           {i === 0 && <span className="h-[7px] w-[7px] animate-pulse-dot rounded-full bg-green" />}
           <span className="text-accent">{entry.version}</span>
           <span>{tailText(entry.entry, entry.date)}</span>
-        </motion.div>
+        </div>
       ))}
-      <motion.div variants={row(1)}>
+      <div style={rowStyle(latest.length, 1)} className="tail-row-in">
         <Link
           href="/changelog"
           className="cursor-pointer border-b border-dotted border-border-2 text-[12px] text-text-2"
         >
           {site.home.fullChangelogLabel}
         </Link>
-      </motion.div>
-    </motion.div>
+      </div>
+    </div>
   );
 }

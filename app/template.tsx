@@ -1,17 +1,9 @@
-"use client";
-
-import { motion } from "framer-motion";
-
-/** Re-mounts on every route change → quick 150ms fade per the reference feel. */
+/**
+ * Re-mounts on every route change (Next template convention) → the CSS
+ * `route-fade` animation replays per navigation. Using CSS rather than a
+ * JS-gated opacity keeps the SSR'd content visible immediately (good LCP)
+ * and degrades gracefully without JS.
+ */
 export default function Template({ children }: { children: React.ReactNode }) {
-  return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.15 }}
-      className="h-full"
-    >
-      {children}
-    </motion.div>
-  );
+  return <div className="route-fade h-full">{children}</div>;
 }

@@ -3,13 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { site } from "@/content/site";
-
-const navItems = [
-  { href: "/work", label: site.pages.work },
-  { href: "/projects", label: site.pages.projects },
-  { href: "/notes", label: site.pages.notes },
-  { href: "/about", label: site.pages.about },
-] as const;
+import { isActive, navItems } from "@/lib/nav";
 
 // Inline SVGs copied from portfolio-final-design.html.
 const socials = [
@@ -53,13 +47,13 @@ export function Header() {
   const pathname = usePathname();
 
   return (
-    <header className="flex items-center justify-between border-b border-border px-12 py-[18px]">
+    <header className="flex items-center justify-between border-b border-border px-12 py-[18px] max-[720px]:px-5 max-[720px]:py-[14px]">
       <Link href="/" className="cursor-pointer text-[15px] font-semibold tracking-[-0.01em]">
         {site.logo}
       </Link>
-      <nav className="flex gap-7">
+      <nav className="flex gap-7 max-[720px]:hidden">
         {navItems.map((item) => {
-          const active = pathname === item.href || pathname.startsWith(`${item.href}/`);
+          const active = isActive(pathname, item.href);
           return (
             <Link
               key={item.href}

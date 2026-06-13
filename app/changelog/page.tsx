@@ -5,7 +5,7 @@ import { site } from "@/content/site";
 
 export default function ChangelogPage() {
   return (
-    <div className="h-full p-12">
+    <div className="h-full p-12 max-[720px]:px-5 max-[720px]:py-7">
       <h1 className="sr-only">{site.pages.changelog}</h1>
       <div className="mx-auto max-w-[640px]">
         <Link

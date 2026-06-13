@@ -13,7 +13,7 @@ export default function AboutPage() {
   ];
 
   return (
-    <div className="h-full p-12">
+    <div className="h-full p-12 max-[720px]:px-5 max-[720px]:py-7">
       <h1 className="sr-only">{site.pages.about}</h1>
       <div className="mx-auto max-w-[640px]">
         <p className="mb-8 max-w-[540px] text-[15px] text-text-2">{about.bio}</p>
@@ -41,7 +41,7 @@ export default function AboutPage() {
         <p className="mt-[14px] mb-8 font-mono text-[12px] text-text-3">{about.runScope}</p>
 
         <SectionLabel>{about.labels.operatingManual}</SectionLabel>
-        <div className="mb-8 grid grid-cols-2 gap-x-6 gap-y-[10px]">
+        <div className="mb-8 grid grid-cols-2 gap-x-6 gap-y-[10px] max-[720px]:grid-cols-1">
           {manual.map((item) => (
             <p key={item.claim} className="text-[13px] text-text-2">
               <b className="font-semibold text-text">{item.claim}</b> {item.explanation}
@@ -49,7 +49,7 @@ export default function AboutPage() {
           ))}
         </div>
 
-        <div className="grid grid-cols-4 gap-[10px]">
+        <div className="grid grid-cols-4 gap-[10px] max-[720px]:grid-cols-2">
           {tasteTiles.map((tile) => (
             <div key={tile.label} className="rounded-[8px] bg-gray-bg px-[14px] py-3">
               <span className="mb-[2px] block text-[11px] text-text-2">{tile.label}</span>

@@ -3,6 +3,7 @@ import { JetBrains_Mono, Montserrat } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
 import { CommandK } from "@/components/command-k/CommandK";
 import { Header } from "@/components/ui/Header";
+import { BottomNav } from "@/components/ui/BottomNav";
 import { site } from "@/content/site";
 import "./globals.css";
 
@@ -26,6 +27,18 @@ export const metadata: Metadata = {
     template: `%s — ${site.name}`,
   },
   description: site.positioning,
+  openGraph: {
+    title: `${site.name} — ${site.role}`,
+    description: site.positioning,
+    url: site.url,
+    siteName: site.name,
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${site.name} — ${site.role}`,
+    description: site.positioning,
+  },
 };
 
 export default function RootLayout({
@@ -39,7 +52,10 @@ export default function RootLayout({
         <ThemeProvider>
           <div className="flex h-screen flex-col overflow-hidden">
             <Header />
-            <main className="min-h-0 flex-1">{children}</main>
+            <main className="min-h-0 flex-1 overflow-hidden max-[720px]:overflow-y-auto max-[720px]:pb-[72px]">
+              {children}
+            </main>
+            <BottomNav />
           </div>
           <CommandK />
         </ThemeProvider>

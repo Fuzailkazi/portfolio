@@ -31,11 +31,11 @@ function CardAction({ item }: { item: Project }) {
 
 export default function ProjectsPage() {
   return (
-    <div className="h-full p-12">
+    <div className="h-full p-12 max-[720px]:px-5 max-[720px]:py-7">
       <h1 className="sr-only">{site.pages.projects}</h1>
       <div className="mx-auto max-w-[980px]">
         <p className="mb-5 text-[14px] text-text-2">{projectsPage.intro}</p>
-        <div className="grid grid-cols-3 gap-[14px]">
+        <div className="grid grid-cols-3 gap-[14px] max-[720px]:grid-cols-1">
           {projects.map((item) =>
             item.type === "cooking" ? (
               <div
