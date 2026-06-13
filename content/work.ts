@@ -44,7 +44,7 @@ export const work: WorkItem[] = [
       system:
         "discovery interviews → synthesis → design-partner program → build-measure loops → GTM",
       result:
-        "Took the platform from a blank page to live: onboarded enterprise design partners, reached early revenue, grew developer adoption, and shipped safety systems that meaningfully cut unsafe agent executions.",
+        "Took the platform from a blank page to live: onboarded enterprise design partners, reached early revenue, grew SDK adoption to 15,000+ developers, and shipped safety systems that meaningfully cut unsafe agent executions.",
     },
   },
 
@@ -83,7 +83,7 @@ export const work: WorkItem[] = [
     icon: "gauge",
     before: "Agents could take unsafe actions in production with nothing standing in the way.",
     after:
-      "Built safety systems that meaningfully reduced unsafe agent executions, with adoption growing across the developer community.",
+      "Built safety systems that meaningfully reduced unsafe agent executions, with SDK adoption scaling to 15,000+ developers.",
     call: "Designed for the worst action an agent could take, not the happy-path demo.",
     scope: "owned agent safety + SDK at ArmorIQ",
     hasCase: false,

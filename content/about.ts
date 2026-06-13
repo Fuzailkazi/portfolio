@@ -10,15 +10,21 @@ export const about: AboutContent = {
   trajectory: [
     {
       version: "v3.1",
-      role: "ArmorIQ · AI PM → Chief of Staff",
-      date: "Oct 2025–now",
-      line: "Joined as AI PM; stepped into Chief of Staff in April. Build the product, run the team, drive company goals home.",
+      role: "ArmorIQ · Chief of Staff",
+      date: "Apr 2026–now",
+      line: "Stepped into Chief of Staff: run the team and the operating cadence, and drive company goals home.",
     },
     {
       version: "v3.0.1",
       role: "NextLeap · PM fellowship",
       date: "Dec 2025",
       line: "Graduated as a Top Fellow.",
+    },
+    {
+      version: "v3.0",
+      role: "ArmorIQ · AI PM",
+      date: "Oct 2025",
+      line: "Joined to build the AI product 0 → 1 — strategy, roadmap, and GTM for a brand-new category.",
     },
     {
       version: "v2.0",
