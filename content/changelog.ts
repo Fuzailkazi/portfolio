@@ -1,4 +1,9 @@
-import type { ChangelogEntry } from "@/lib/types";
+import type { ChangelogEntry, ChangelogPageContent } from "@/lib/types";
+
+export const changelogPage: ChangelogPageContent = {
+  backLabel: "← back",
+  label: "Changelog",
+};
 
 // Maps 1:1 to the `logs` array in portfolio-final-design.html.
 export const changelog: ChangelogEntry[] = [

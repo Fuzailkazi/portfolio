@@ -32,6 +32,10 @@ export interface SiteContent {
     /** Label of the link below the changelog tail, e.g. "full changelog →". */
     fullChangelogLabel: string;
   };
+  notes: {
+    intro: string;
+    backLabel: string;
+  };
   commandK: {
     /** The fixed bottom-right hint chip, e.g. "⌘K". */
     hint: string;
@@ -40,6 +44,8 @@ export interface SiteContent {
     greeting: string;
     suggestions: string[];
     inputPlaceholder: string;
+    errorMessage: string;
+    rateLimitMessage: string;
   };
 }
 
@@ -47,6 +53,14 @@ export interface ChangelogEntry {
   version: string;
   date: string;
   entry: string;
+}
+
+export interface CaseStudy {
+  scope: string;
+  mess: string;
+  call: string;
+  system: string;
+  result: string;
 }
 
 export interface WorkItem {
@@ -61,6 +75,30 @@ export interface WorkItem {
   scope: string;
   /** Whether a full case study page exists at /work/[slug]. */
   hasCase: boolean;
+  /** Card spans both grid columns. */
+  full: boolean;
+  caseStudy?: CaseStudy;
+}
+
+/** Copy for the Work view chrome and case study pages. */
+export interface WorkPageContent {
+  beforeLabel: string;
+  afterLabel: string;
+  scope: string;
+  beforeTag: string;
+  afterTag: string;
+  tapHint: string;
+  callPrefix: string;
+  caseLinkLabel: string;
+  backLabel: string;
+  caseTitleSuffix: string;
+  rowLabels: {
+    mess: string;
+    call: string;
+    system: string;
+    result: string;
+  };
+  slots: string[];
 }
 
 export type ProjectType = "live" | "link" | "prompt" | "cooking";
@@ -71,6 +109,52 @@ export interface Project {
   type: ProjectType;
   url?: string;
   prompt?: string;
+}
+
+/** Copy for the Projects view chrome. */
+export interface ProjectsPageContent {
+  intro: string;
+  badgeLabel: string;
+  visitLabel: string;
+  copyLabel: string;
+  copiedLabel: string;
+}
+
+export interface TrajectoryItem {
+  version: string;
+  role: string;
+  date: string;
+  line: string;
+}
+
+export interface RunRow {
+  name: string;
+  description: string;
+}
+
+/** Copy for the About view. */
+export interface AboutContent {
+  bio: string;
+  labels: {
+    trajectory: string;
+    whatIRun: string;
+    operatingManual: string;
+  };
+  trajectory: TrajectoryItem[];
+  runs: RunRow[];
+  runScope: string;
+  tasteLabels: {
+    now: string;
+    stack: string;
+    reading: string;
+    obsessedWith: string;
+  };
+}
+
+/** Copy for the Changelog view chrome. */
+export interface ChangelogPageContent {
+  backLabel: string;
+  label: string;
 }
 
 export interface ManualItem {
@@ -87,8 +171,10 @@ export interface TasteContent {
 
 export interface NoteFrontmatter {
   title: string;
+  /** ISO date (yyyy-mm-dd) — sorted on, formatted for display. */
   date: string;
   readTime: string;
+  excerpt: string;
 }
 
 export interface Note extends NoteFrontmatter {

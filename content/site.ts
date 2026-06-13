@@ -24,6 +24,10 @@ export const site: SiteContent = {
   home: {
     fullChangelogLabel: "full changelog →",
   },
+  notes: {
+    intro: "Occasional takes from my seat. No schedule promised.",
+    backLabel: "← Notes",
+  },
   commandK: {
     hint: "⌘K",
     title: "✦ Fuzail AI",
@@ -32,5 +36,8 @@ export const site: SiteContent = {
       "Hey — I'm the bot from Projects. Ask about his work, his tools, or how I'm built. I can also pass him a message.",
     suggestions: ["Coolest project?", "How are you built?", "Pass him a message"],
     inputPlaceholder: "Ask anything...",
+    errorMessage: "Hm, that didn't go through. Give it another shot?",
+    rateLimitMessage:
+      "You've hit today's message limit — I'm popular but rationed. Come back tomorrow.",
   },
 };

@@ -1,15 +1,36 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { site } from "@/content/site";
+import type { ChatMessage } from "@/lib/types";
+
+function Dots() {
+  return (
+    <div className="mb-3 flex w-fit gap-[5px] rounded-[10px] bg-gray-bg px-[14px] py-[14px]">
+      {[0, 0.2, 0.4].map((delay) => (
+        <span
+          key={delay}
+          className="h-[6px] w-[6px] animate-pulse-dot rounded-full bg-text-3"
+          style={{ animationDelay: `${delay}s` }}
+        />
+      ))}
+    </div>
+  );
+}
 
 /**
- * ⌘K overlay — hint chip (fixed bottom-right) + placeholder modal.
- * ⌘K / Ctrl+K opens, Esc or backdrop click closes. The real chat UI
- * replaces the static input in a later phase.
+ * ⌘K — Fuzail AI. Hint chip + chat modal wired to /api/chat (streaming).
+ * The greeting bubble is local-only (never sent to the API); conversation
+ * state survives close/reopen within the session.
  */
 export function CommandK() {
   const [open, setOpen] = useState(false);
+  const [messages, setMessages] = useState<ChatMessage[]>([]);
+  const [input, setInput] = useState("");
+  const [busy, setBusy] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const inputRef = useRef<HTMLInputElement>(null);
+  const bottomRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     function onKeyDown(event: KeyboardEvent) {
@@ -24,6 +45,57 @@ export function CommandK() {
     window.addEventListener("keydown", onKeyDown);
     return () => window.removeEventListener("keydown", onKeyDown);
   }, []);
+
+  useEffect(() => {
+    if (open) inputRef.current?.focus();
+  }, [open]);
+
+  useEffect(() => {
+    bottomRef.current?.scrollIntoView({ block: "end" });
+  }, [messages, busy, error]);
+
+  async function send(text: string) {
+    const content = text.trim();
+    if (!content || busy) return;
+
+    const outgoing: ChatMessage[] = [...messages, { role: "user", content }];
+    setMessages(outgoing);
+    setInput("");
+    setBusy(true);
+    setError(null);
+
+    try {
+      const res = await fetch("/api/chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ messages: outgoing }),
+      });
+
+      if (!res.ok || !res.body) {
+        setError(res.status === 429 ? site.commandK.rateLimitMessage : site.commandK.errorMessage);
+        return;
+      }
+
+      const reader = res.body.getReader();
+      const decoder = new TextDecoder();
+      let acc = "";
+      setMessages((prev) => [...prev, { role: "assistant", content: "" }]);
+      for (;;) {
+        const { done, value } = await reader.read();
+        if (done) break;
+        acc += decoder.decode(value, { stream: true });
+        const snapshot = acc;
+        setMessages((prev) => [...prev.slice(0, -1), { role: "assistant", content: snapshot }]);
+      }
+    } catch {
+      setError(site.commandK.errorMessage);
+    } finally {
+      setBusy(false);
+    }
+  }
+
+  const awaitingFirstToken =
+    busy && (messages.length === 0 || messages[messages.length - 1]?.role === "user");
 
   return (
     <>
@@ -59,22 +131,72 @@ export function CommandK() {
                 {site.commandK.close}
               </button>
             </div>
-            <div className="mb-3 rounded-[10px] bg-gray-bg px-[14px] py-3 text-[13px]">
-              {site.commandK.greeting}
+
+            <div className="max-h-[50vh] overflow-y-auto">
+              <div className="mb-3 rounded-[10px] bg-gray-bg px-[14px] py-3 text-[13px]">
+                {site.commandK.greeting}
+              </div>
+
+              {messages.map((message, i) =>
+                message.role === "user" ? (
+                  <div
+                    key={i}
+                    className="mb-3 ml-auto w-fit max-w-[80%] rounded-[10px] bg-accent-bg px-[14px] py-3 text-[13px]"
+                  >
+                    {message.content}
+                  </div>
+                ) : (
+                  message.content !== "" && (
+                    <div
+                      key={i}
+                      className="mb-3 rounded-[10px] bg-gray-bg px-[14px] py-3 text-[13px] whitespace-pre-wrap"
+                    >
+                      {message.content}
+                    </div>
+                  )
+                ),
+              )}
+
+              {awaitingFirstToken && <Dots />}
+
+              {error && (
+                <div className="mb-3 rounded-[10px] bg-gray-bg px-[14px] py-3 text-[13px] text-text-2">
+                  {error}
+                </div>
+              )}
+              <div ref={bottomRef} />
             </div>
-            <div className="mb-3 flex flex-wrap gap-2">
-              {site.commandK.suggestions.map((chip) => (
-                <span
-                  key={chip}
-                  className="cursor-pointer rounded-full border border-border px-3 py-[5px] text-[12px] text-text-2 transition-all duration-150 hover:border-accent hover:text-accent"
-                >
-                  {chip}
-                </span>
-              ))}
-            </div>
-            <div className="rounded-[10px] border border-border-2 px-[14px] py-[10px] text-[13px] text-text-3">
-              {site.commandK.inputPlaceholder}
-            </div>
+
+            {messages.length === 0 && (
+              <div className="mb-3 flex flex-wrap gap-2">
+                {site.commandK.suggestions.map((chip) => (
+                  <button
+                    key={chip}
+                    type="button"
+                    onClick={() => send(chip)}
+                    className="cursor-pointer rounded-full border border-border px-3 py-[5px] text-[12px] text-text-2 transition-all duration-150 hover:border-accent hover:text-accent"
+                  >
+                    {chip}
+                  </button>
+                ))}
+              </div>
+            )}
+
+            <form
+              onSubmit={(event) => {
+                event.preventDefault();
+                void send(input);
+              }}
+            >
+              <input
+                ref={inputRef}
+                value={input}
+                onChange={(event) => setInput(event.target.value)}
+                placeholder={site.commandK.inputPlaceholder}
+                aria-label={site.commandK.inputPlaceholder}
+                className="w-full rounded-[10px] border border-border-2 px-[14px] py-[10px] text-[13px] outline-none placeholder:text-text-3 focus:border-accent"
+              />
+            </form>
           </div>
         </div>
       )}

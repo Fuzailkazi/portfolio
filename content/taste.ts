@@ -1,8 +1,9 @@
 import type { TasteContent } from "@/lib/types";
 
+// Maps 1:1 to the taste tiles in portfolio-final-design.html.
 export const taste: TasteContent = {
-  now: "Placeholder — building at ArmorIQ, automating the boring parts of ops.",
-  stack: ["Placeholder tool 1", "Placeholder tool 2", "Placeholder tool 3", "Placeholder tool 4"],
-  reading: "Placeholder — currently reading something that will show up in conversation.",
-  obsessedWith: "Placeholder — the current rabbit hole.",
+  now: "Fuzail AI v2",
+  stack: ["Claude", "Linear", "Notion"],
+  reading: "High Output Mgmt",
+  obsessedWith: "Agent evals",
 };

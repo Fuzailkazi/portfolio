@@ -29,9 +29,17 @@ function parseFrontmatter(raw: string): { frontmatter: NoteFrontmatter; body: st
       title: fields.title ?? "Untitled",
       date: fields.date ?? "",
       readTime: fields.readTime ?? "",
+      excerpt: fields.excerpt ?? "",
     },
     body: body.trim(),
   };
+}
+
+/** "2026-05-10" → "May 2026" for the notes meta line. */
+export function formatNoteDate(isoDate: string): string {
+  const parsed = new Date(`${isoDate}T00:00:00Z`);
+  if (Number.isNaN(parsed.getTime())) return isoDate;
+  return parsed.toLocaleDateString("en-US", { month: "short", year: "numeric", timeZone: "UTC" });
 }
 
 export async function getNoteSlugs(): Promise<string[]> {

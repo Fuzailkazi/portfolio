@@ -1,38 +1,49 @@
-import type { Project } from "@/lib/types";
+import type { Project, ProjectsPageContent } from "@/lib/types";
+
+// Maps 1:1 to the projects view in portfolio-final-design.html.
+export const projectsPage: ProjectsPageContent = {
+  intro: "Things I built and actually use.",
+  badgeLabel: "live on this site",
+  visitLabel: "visit ↗",
+  copyLabel: "⧉ copy",
+  copiedLabel: "✓ copied",
+};
 
 export const projects: Project[] = [
   {
-    title: "Placeholder live project",
-    description: "A thing that is deployed and clickable.",
+    title: "Fuzail AI",
+    description: "RAG bot trained on my work — press ⌘K, it's right there.",
     type: "live",
-    url: "https://example.com/live",
   },
   {
-    title: "Placeholder linked project",
-    description: "A thing that lives elsewhere — repo, write-up, demo.",
+    title: "Deployed project",
+    description: "Live URL + screenshot thumbnail. Real and clickable.",
     type: "link",
-    url: "https://github.com/placeholder/project",
+    url: "https://example.com",
   },
   {
-    title: "Placeholder prompt project",
-    description: "A prompt worth stealing. Click to copy.",
+    title: "Exec summary generator",
+    description: "Raw meeting notes → 5-line brief execs actually read.",
     type: "prompt",
-    prompt: "You are a placeholder prompt. Replace me with something actually useful.",
+    prompt:
+      "Placeholder prompt — turn raw meeting notes into a 5-line brief executives actually read.",
   },
   {
-    title: "Placeholder prompt project #2",
-    description: "Another prompt, because one is never enough.",
+    title: "Decision doc template",
+    description: "Forces options + tradeoffs before any meeting happens.",
     type: "prompt",
-    prompt: "Placeholder system prompt — concise, opinionated, replace before launch.",
+    prompt: "Placeholder prompt — structure a decision doc with options and tradeoffs upfront.",
   },
   {
-    title: "Placeholder cooking project",
-    description: "Not shipped yet. Smells good though.",
-    type: "cooking",
+    title: "Weekly status autopilot",
+    description: "Scattered updates → one stakeholder-ready note.",
+    type: "prompt",
+    prompt:
+      "Placeholder prompt — compile scattered team updates into one stakeholder-ready status note.",
   },
   {
-    title: "Placeholder cooking project #2",
-    description: "In the oven. Do not open the door.",
+    title: "⚗ what's cooking — next build",
+    description: "",
     type: "cooking",
   },
 ];
