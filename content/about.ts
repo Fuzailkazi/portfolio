@@ -24,7 +24,7 @@ export const about: AboutContent = {
       version: "v3.0",
       role: "ArmorIQ · AI PM",
       date: "Oct 2025",
-      line: "Joined to build the AI product 0 → 1 — strategy, roadmap, and GTM for a brand-new category.",
+      line: "Joined to build the AI product 0 → 1: strategy, roadmap, and GTM for a brand-new category.",
     },
     {
       version: "v2.0",
@@ -55,5 +55,5 @@ export const about: AboutContent = {
     { name: "The AI roadmap", description: "discovery → eval-gated builds → GTM" },
   ],
   runScope: "“where founder intent turns into shipped work”",
-  tasteLabels: { now: "Now", stack: "Stack", reading: "Reading", obsessedWith: "Obsessed with" },
+  tasteLabels: { now: "Building", stack: "Stack", reading: "Rabbit hole", obsessedWith: "Hot take" },
 };

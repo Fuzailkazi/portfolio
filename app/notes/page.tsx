@@ -6,7 +6,7 @@ export default async function NotesPage() {
   const notes = await getAllNotes();
 
   return (
-    <div className="h-full p-12 max-[720px]:px-5 max-[720px]:py-7">
+    <div className="h-full overflow-y-auto p-12 max-[720px]:px-5 max-[720px]:py-7">
       <h1 className="sr-only">{site.pages.notes}</h1>
       <div className="mx-auto max-w-[560px]">
         <p className="mb-2 text-[14px] text-text-2">{site.notes.intro}</p>
