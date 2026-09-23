@@ -16,6 +16,7 @@ export const site: SiteContent = {
   pages: {
     home: "Home",
     work: "Work",
+    caseStudies: "Case Studies",
     projects: "Building",
     notes: "Writing",
     about: "About",

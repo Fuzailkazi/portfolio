@@ -22,6 +22,7 @@ export interface SiteContent {
   pages: {
     home: string;
     work: string;
+    caseStudies: string;
     projects: string;
     notes: string;
     about: string;
