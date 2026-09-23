@@ -2,8 +2,8 @@ import type { Project, ProjectsPageContent } from "@/lib/types";
 
 // Maps 1:1 to the projects view in portfolio-final-design.html.
 export const projectsPage: ProjectsPageContent = {
-  intro: "Things I built and actually use.",
-  badgeLabel: "live on this site",
+  intro: "A few things I am building, experimenting with, and learning from.",
+  badgeLabel: "built for this portfolio",
   visitLabel: "visit ↗",
   copyLabel: "⧉ copy",
   copiedLabel: "✓ copied",
@@ -11,39 +11,20 @@ export const projectsPage: ProjectsPageContent = {
 
 export const projects: Project[] = [
   {
-    title: "Fuzail AI",
-    description: "RAG bot trained on my work — press ⌘K, it's right there.",
-    type: "live",
-  },
-  {
-    title: "Deployed project",
-    description: "Live URL + screenshot thumbnail. Real and clickable.",
+    title: "AI RedTeaming agent",
+    description: "A deployed agent security testing tool built as part of my work at ArmorIQ.",
     type: "link",
-    url: "https://example.com",
+    url: "https://redagent-web.vercel.app/",
   },
   {
-    title: "Exec summary generator",
-    description: "Raw meeting notes → 5-line brief execs actually read.",
-    type: "prompt",
-    prompt:
-      "Placeholder prompt — turn raw meeting notes into a 5-line brief executives actually read.",
+    title: "Causely Feature Impact Simulator",
+    description: "A personal product experiment for exploring how a feature idea could affect activation, retention, revenue, and NPS.",
+    type: "link",
+    url: "https://causely-liard.vercel.app/",
   },
   {
-    title: "Decision doc template",
-    description: "Forces options + tradeoffs before any meeting happens.",
-    type: "prompt",
-    prompt: "Placeholder prompt — structure a decision doc with options and tradeoffs upfront.",
-  },
-  {
-    title: "Weekly status autopilot",
-    description: "Scattered updates → one stakeholder-ready note.",
-    type: "prompt",
-    prompt:
-      "Placeholder prompt — compile scattered team updates into one stakeholder-ready status note.",
-  },
-  {
-    title: "⚗ what's cooking — next build",
-    description: "",
+    title: "Flow Trace",
+    description: "A side project I am currently working on.",
     type: "cooking",
   },
 ];

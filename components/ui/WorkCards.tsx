@@ -30,7 +30,14 @@ function Card({ item, flipped, onFlip }: { item: WorkItem; flipped: boolean; onF
         transition={{ duration: 0.25 }}
       >
         <div className="mb-[6px] flex items-center justify-between">
-          <b className="text-[14px] font-semibold">{item.title}</b>
+          <div>
+            {item.category && (
+              <span className="mb-[3px] block font-mono text-[9px] tracking-[0.08em] text-text-3">
+                {item.category}
+              </span>
+            )}
+            <b className="text-[14px] font-semibold">{item.title}</b>
+          </div>
           <span
             className={`font-mono text-[10px] tracking-[0.08em] ${flipped ? "text-green" : "text-red"}`}
           >
@@ -46,13 +53,15 @@ function Card({ item, flipped, onFlip }: { item: WorkItem; flipped: boolean; onF
               {workPage.callPrefix}
               {item.call}
             </div>
-            {item.hasCase && (
+            {(item.hasCase || item.externalUrl) && (
               <Link
-                href={`/work/${item.slug}`}
+                href={item.externalUrl ?? `/work/${item.slug}`}
+                target={item.externalUrl ? "_blank" : undefined}
+                rel={item.externalUrl ? "noreferrer" : undefined}
                 onClick={(event) => event.stopPropagation()}
                 className="mt-[6px] inline-block text-[12px] font-medium text-accent"
               >
-                {workPage.caseLinkLabel}
+                {item.externalUrl ? "open project →" : workPage.caseLinkLabel}
               </Link>
             )}
           </>

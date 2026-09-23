@@ -43,16 +43,18 @@ export default async function CaseStudyPage(props: PageProps<"/work/[slug]">) {
             <p className="text-[14px] text-text-2">{row.text}</p>
           </div>
         ))}
-        <div className="mt-7 flex gap-3">
-          {workPage.slots.map((slot) => (
-            <div
-              key={slot}
-              className="flex-1 rounded border border-dashed border-border-2 p-5 text-center text-[12px] text-text-3"
-            >
-              {slot}
-            </div>
-          ))}
-        </div>
+        {workPage.slots.length > 0 && (
+          <div className="mt-7 flex gap-3">
+            {workPage.slots.map((slot) => (
+              <div
+                key={slot}
+                className="flex-1 rounded border border-dashed border-border-2 p-5 text-center text-[12px] text-text-3"
+              >
+                {slot}
+              </div>
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );

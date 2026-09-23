@@ -3,8 +3,9 @@ import type { SiteContent } from "@/lib/types";
 export const site: SiteContent = {
   name: "Fuzail Kazi",
   logo: "Fuzail",
-  role: "AI PM / Chief of Staff at ArmorIQ.",
-  positioning: "I build AI products and keep the company executing.",
+  role: "AI product, developer relations, and GTM at ArmorIQ.",
+  positioning:
+    "I work across product, developer relations, documentation, and India GTM to help technical AI products reach the people who need them.",
   url: "https://example.com",
   social: {
     github: "https://github.com/Fuzailkazi",
@@ -15,8 +16,8 @@ export const site: SiteContent = {
   pages: {
     home: "Home",
     work: "Work",
-    projects: "Projects",
-    notes: "Notes",
+    projects: "Building",
+    notes: "Writing",
     about: "About",
     changelog: "Changelog",
     coffee: "Coffee",
@@ -33,15 +34,15 @@ export const site: SiteContent = {
     unavailable: "Not set up right now.",
   },
   notes: {
-    intro: "Occasional takes from my seat. No schedule promised.",
-    backLabel: "← Notes",
+    intro: "Writing on AI products, developer experience, product work, and building.",
+    backLabel: "← Writing",
   },
   commandK: {
     hint: "⌘K",
-    title: "✦ Fuzail AI",
+    title: "Fuzail AI",
     close: "✕",
     greeting:
-      "Hey — I'm the bot from Projects. Ask about his work, his tools, or how I'm built. I can also pass him a message.",
+      "Ask me about Fuzail's work, AI projects, or writing.",
     suggestions: ["Coolest project?", "How are you built?", "Pass him a message"],
     inputPlaceholder: "Ask anything...",
     errorMessage: "Hm, that didn't go through. Give it another shot?",

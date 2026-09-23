@@ -86,6 +86,10 @@ export interface WorkItem {
   hasCase: boolean;
   /** Card spans both grid columns. */
   full: boolean;
+  /** Optional external case-study URL for fellowship or portfolio artifacts. */
+  externalUrl?: string;
+  /** Short context displayed with the work item. */
+  category?: string;
   caseStudy?: CaseStudy;
 }
 

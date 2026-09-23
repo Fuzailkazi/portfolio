@@ -40,9 +40,11 @@ export default function ProjectsPage() {
             item.type === "cooking" ? (
               <div
                 key={item.title}
-                className="flex items-center justify-center rounded border border-dashed border-border p-4 text-[13px] text-text-3 transition-all duration-200 hover:border-border-2 hover:bg-[#FCFCFC]"
+                className="flex flex-col justify-center rounded border border-dashed border-border p-4 transition-all duration-200 hover:border-border-2 hover:bg-[#FCFCFC]"
               >
-                {item.title}
+                <b className="text-[14px] font-semibold text-text">{item.title}</b>
+                <p className="mt-1 text-[13px] text-text-2">{item.description}</p>
+                <span className="mt-2 font-mono text-[10px] text-text-3">IN PROGRESS</span>
               </div>
             ) : (
               <div
