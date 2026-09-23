@@ -11,14 +11,30 @@ export default function CaseStudiesPage() {
         </p>
         <div className="grid grid-cols-2 gap-[14px] max-[720px]:grid-cols-1">
           {caseStudies.map((study) => (
-            <article key={study.title} className="rounded border border-border p-4 transition-colors duration-150 hover:border-border-2">
-              <span className="font-mono text-[10px] tracking-[0.08em] text-accent">{study.format}</span>
-              <h2 className="mt-2 text-[15px] font-semibold">{study.title}</h2>
-              <p className="mt-1 text-[13px] text-text-2">{study.summary}</p>
-              <a className="mt-3 inline-block text-[12px] text-accent" href={study.href} target="_blank" rel="noreferrer">
-                {study.linkLabel} ↗
-              </a>
-            </article>
+            <a
+              key={study.title}
+              className="block overflow-hidden rounded border border-border text-text no-underline transition-colors duration-150 hover:border-border-2"
+              href={study.href}
+              target="_blank"
+              rel="noreferrer"
+            >
+              {"thumbnail" in study && study.thumbnail ? (
+                <div
+                  aria-label={`${study.title} thumbnail`}
+                  className="h-[132px] border-b border-border bg-[#F6F6F6] bg-cover bg-center max-[720px]:h-[160px]"
+                  role="img"
+                  style={{ backgroundImage: `url(${study.thumbnail})` }}
+                />
+              ) : null}
+              <div className="p-4">
+                <span className="font-mono text-[10px] tracking-[0.08em] text-accent">{study.format}</span>
+                <h2 className="mt-2 text-[15px] font-semibold">{study.title}</h2>
+                <p className="mt-1 text-[13px] text-text-2">{study.summary}</p>
+                <span className="mt-3 inline-block text-[12px] text-accent">
+                  {study.linkLabel} ↗
+                </span>
+              </div>
+            </a>
           ))}
         </div>
       </div>
