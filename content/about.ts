@@ -1,7 +1,7 @@
 import type { AboutContent } from "@/lib/types";
 
 export const about: AboutContent = {
-  bio: "I'm Fuzail. I'm an AI PM and Chief of Staff at ArmorIQ, where I build the AI product and run the team that ships it. Before that I was the sole PM at AccelChain, scaling a developer platform across AI and Web3, after starting out in developer relations and blockchain communities. I turn fuzzy strategy into shipped product, and when waiting isn't an option I build the tools myself, including the AI answering questions on this site.",
+  bio: "I'm Fuzail Kazi, an AI product manager and builder working across agent development, developer relations, and go-to-market. At ArmorIQ, I help shape and ship AI products, bring developer and customer feedback into product decisions, and work on the docs, content, and launch efforts that help people understand and adopt them. I also build and test agent prototypes myself, so I can get close to the technology, spot rough edges, and collaborate effectively with engineering. Before ArmorIQ, I was the sole PM at AccelChain and started my career in developer relations. I like taking a problem from first conversation through product decisions, a working build, and adoption.",
   labels: {
     trajectory: "Trajectory",
     whatIRun: "What I run",
@@ -24,7 +24,7 @@ export const about: AboutContent = {
       version: "v3.0",
       role: "ArmorIQ · AI PM",
       date: "Oct 2025",
-      line: "Joined to build the AI product 0 → 1: strategy, roadmap, and GTM for a brand-new category.",
+      line: "Joined when it was just an idea and helped take the AI product from 0 → 1: shaping the strategy, roadmap, and go-to-market.",
     },
     {
       version: "v2.0",
@@ -46,14 +46,11 @@ export const about: AboutContent = {
     },
   ],
   runs: [
-    { name: "The team", description: "hired and lead engineering, design, marketing, and DevRel" },
-    {
-      name: "The operating cadence",
-      description: "priorities → weekly rhythm → decisions on record",
-    },
-    { name: "Company goals", description: "company targets → owned work → shipped outcomes" },
-    { name: "The AI roadmap", description: "discovery → eval-gated builds → GTM" },
+    { name: "AI product", description: "discovery, product direction, agent workflows, testing, and launch" },
+    { name: "Developer adoption", description: "developer feedback, docs, technical content, and community" },
+    { name: "India leadership", description: "local team ownership, office operations, coordination, and India GTM" },
+    { name: "Hands-on building", description: "prototype agents, understand the code, and test the experience" },
   ],
-  runScope: "“where founder intent turns into shipped work”",
+  runScope: "product thinking + technical fluency + developer trust + market execution",
   tasteLabels: { now: "Building", stack: "Stack", reading: "Rabbit hole", obsessedWith: "Hot take" },
 };

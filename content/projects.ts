@@ -2,7 +2,7 @@ import type { Project, ProjectsPageContent } from "@/lib/types";
 
 // Maps 1:1 to the projects view in portfolio-final-design.html.
 export const projectsPage: ProjectsPageContent = {
-  intro: "A few things I am building, experimenting with, and learning from.",
+  intro: "Agent and AI product experiments: built to test ideas, understand the technology, and learn what makes useful products work.",
   badgeLabel: "built for this portfolio",
   visitLabel: "visit ↗",
   copyLabel: "⧉ copy",

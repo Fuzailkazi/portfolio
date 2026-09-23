@@ -3,9 +3,9 @@ import type { SiteContent } from "@/lib/types";
 export const site: SiteContent = {
   name: "Fuzail Kazi",
   logo: "Fuzail",
-  role: "AI product, developer relations, and GTM at ArmorIQ.",
+  role: "AI product · agent building · developer relations · GTM",
   positioning:
-    "I work across product, developer relations, documentation, and India GTM to help technical AI products reach the people who need them.",
+    "I take technical AI products from problem discovery and hands-on agent prototypes to developer adoption and go-to-market.",
   url: "https://example.com",
   social: {
     github: "https://github.com/Fuzailkazi",
@@ -35,7 +35,7 @@ export const site: SiteContent = {
     unavailable: "Not set up right now.",
   },
   notes: {
-    intro: "Writing on AI products, developer experience, product work, and building.",
+    intro: "Writing on AI product craft, agent reliability, developer experience, and what it takes to get technical products adopted.",
     backLabel: "← Writing",
   },
   commandK: {
