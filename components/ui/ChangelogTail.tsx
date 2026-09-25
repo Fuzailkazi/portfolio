@@ -2,8 +2,7 @@ import Link from "next/link";
 import { changelog } from "@/content/changelog";
 import { site } from "@/content/site";
 
-// Reference rows fade to 100% / 70% / 45% top-down.
-const ROW_OPACITY = [1, 0.7, 0.45];
+const ROW_OPACITY = [1, 1, 1];
 const STAGGER_MS = 120;
 
 /**
@@ -43,7 +42,7 @@ export function ChangelogTail() {
       <div style={rowStyle(latest.length, 1)} className="tail-row-in">
         <Link
           href="/changelog"
-          className="cursor-pointer border-b border-dotted border-border-2 text-[12px] text-text-2"
+          className="cursor-pointer border-b border-dotted border-border-2 text-[12px] text-accent"
         >
           {site.home.fullChangelogLabel}
         </Link>

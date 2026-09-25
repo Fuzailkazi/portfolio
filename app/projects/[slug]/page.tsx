@@ -39,7 +39,7 @@ export default async function ProjectStoryPage(props: PageProps<"/projects/[slug
           </div>
         </header>
 
-        <div className="mt-8 space-y-4 text-[14px] text-text-2">
+        <div className="mt-8 space-y-4 text-[16px] text-text-2">
           {story.intro.map((paragraph) => (
             <p key={paragraph}>{paragraph}</p>
           ))}
@@ -54,24 +54,24 @@ export default async function ProjectStoryPage(props: PageProps<"/projects/[slug
             <section key={section.title}>
               <h2 className="text-[18px] font-semibold tracking-[-0.01em]">{section.title}</h2>
               {section.body ? (
-                <div className="mt-3 space-y-3 text-[14px] text-text-2">
+                <div className="mt-3 space-y-3 text-[16px] text-text-2">
                   {section.body.map((paragraph) => (
                     <p key={paragraph}>{paragraph}</p>
                   ))}
                 </div>
               ) : null}
               {section.bullets ? (
-                <ul className="mt-3 list-disc space-y-2 pl-5 text-[14px] text-text-2">
+                <ul className="mt-3 list-disc space-y-2 pl-5 text-[16px] text-text-2">
                   {section.bullets.map((bullet) => (
                     <li key={bullet}>{bullet}</li>
                   ))}
                 </ul>
               ) : null}
               {section.examplesTitle ? (
-                <p className="mt-4 text-[14px] text-text-2">{section.examplesTitle}</p>
+                <p className="mt-4 text-[16px] text-text-2">{section.examplesTitle}</p>
               ) : null}
               {section.examples ? (
-                <ul className="mt-3 list-disc space-y-2 pl-5 text-[14px] text-text-2">
+                <ul className="mt-3 list-disc space-y-2 pl-5 text-[16px] text-text-2">
                   {section.examples.map((example) => (
                     <li key={example}>&ldquo;{example}&rdquo;</li>
                   ))}

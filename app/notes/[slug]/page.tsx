@@ -27,7 +27,7 @@ export default async function NotePage(props: PageProps<"/notes/[slug]">) {
         <p className="mt-[6px] mb-6 text-[12px] text-text-3">
           {note.readTime} · {formatNoteDate(note.date)}
         </p>
-        <div className="space-y-4 text-[14px] text-text-2">
+        <div className="space-y-4 text-[16px] text-text-2">
           <ReactMarkdown>{note.body}</ReactMarkdown>
         </div>
       </div>

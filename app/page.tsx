@@ -15,8 +15,8 @@ export default function HomePage() {
           {changelog[0].version}
         </Link>
       </h1>
-      <p className="mt-2 text-[17px] text-text-2">{site.role}</p>
-      <p className="mt-[2px] text-[14px] text-text-2">{site.positioning}</p>
+      <p className="mt-2 text-[16px] text-text-2">{site.role}</p>
+      <p className="mt-[2px] text-[16px] text-text-2">{site.positioning}</p>
       <ChangelogTail />
     </div>
   );

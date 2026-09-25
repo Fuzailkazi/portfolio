@@ -1,30 +1,26 @@
 @import "tailwindcss";
 
-/*
- * Design tokens — locked, copied from portfolio-final-design.html :root.
- * When unsure about any visual value, open that file and copy. Never invent.
- */
 :root {
-  --bg: #ffffff;
-  --text: #333336;
-  --text-2: #6e6e73;
-  --text-3: #9b9ba0;
+  --bg: #f9f9f9;
+  --text: #909092;
+  --text-2: #909092;
+  --text-3: #909092;
   --accent: #3b6fd4;
   --accent-bg: #ebf1fb;
-  --border: #e8e8ea;
-  --border-2: #d9d9dc;
-  --red: #c84b43;
-  --red-bg: #fbefee;
-  --red-text: #a0392f;
-  --green: #2e8b57;
-  --green-bg: #edf6f0;
-  --green-text: #1f6b45;
-  --gray-bg: #f6f6f7;
+  --border: #dedede;
+  --border-2: #bcbcbc;
+  --red: #000000;
+  --red-bg: #eeeeee;
+  --red-text: #000000;
+  --green: #000000;
+  --green-bg: #eeeeee;
+  --green-text: #000000;
+  --gray-bg: #eeeeee;
+  --space-unit: 2px;
 }
 
-/* Non-inline so Tailwind emits --radius into :root and `rounded` resolves to it (12px). */
 @theme {
-  --radius: 12px;
+  --radius: 0px;
 
   /* Reference: @keyframes pulse { 50% { opacity: .3; } }, 1.6s infinite */
   --animate-pulse-dot: pulse-dot 1.6s infinite;
@@ -52,8 +48,7 @@
   --color-green-text: var(--green-text);
   --color-gray-bg: var(--gray-bg);
 
-  /* Fonts injected by next/font in app/layout.tsx (Montserrat = Proxima Nova stand-in) */
-  --font-sans: var(--font-sans), "Proxima Nova", -apple-system, sans-serif;
+  --font-sans: var(--font-hanken), sans-serif;
   --font-mono: var(--font-mono), "SF Mono", monospace;
 }
 
@@ -61,17 +56,44 @@ body {
   background: var(--bg);
   color: var(--text);
   font-family: var(--font-sans);
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+b,
+strong {
+  color: #000;
+}
+
+h1 {
+  font-size: 24px !important;
+}
+
+h2 {
+  font-size: 20px !important;
+}
+
+@layer base {
+  a {
+    color: #000;
+  }
+}
+
+*,
+*::before,
+*::after {
+  border-radius: 0 !important;
 }
 
 /* Visible keyboard focus for all interactive elements (accessibility). */
 :focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 2px;
-  border-radius: 3px;
 }
 :focus:not(:focus-visible) {
   outline: none;
