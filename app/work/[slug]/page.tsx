@@ -20,7 +20,7 @@ export default async function CaseStudyPage(props: PageProps<"/work/[slug]">) {
   ];
 
   return (
-    <div className="h-full p-12 max-[720px]:px-5 max-[720px]:py-7">
+    <div className="shell collection-page">
       <div className="mx-auto max-w-[640px]">
         <Link
           href="/work"
@@ -34,7 +34,7 @@ export default async function CaseStudyPage(props: PageProps<"/work/[slug]">) {
         </h1>
         <p className="mt-[6px] mb-[10px] font-mono text-[12px] text-text-3">{cs.scope}</p>
         {rows.map((row) => (
-          <div key={row.label} className="mt-4 flex gap-4">
+          <div key={row.label} className="mt-6 flex gap-4 max-[720px]:flex-col max-[720px]:gap-2">
             <span
               className={`min-w-[92px] pt-[3px] font-mono text-[11px] tracking-[0.08em] ${row.color}`}
             >

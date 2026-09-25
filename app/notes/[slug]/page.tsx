@@ -15,7 +15,7 @@ export default async function NotePage(props: PageProps<"/notes/[slug]">) {
   if (!note) notFound();
 
   return (
-    <div className="h-full overflow-y-auto p-12 max-[720px]:px-5 max-[720px]:py-7">
+    <div className="shell collection-page">
       <div className="mx-auto max-w-[560px]">
         <Link
           href="/notes"

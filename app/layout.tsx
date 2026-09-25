@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
 import { Hanken_Grotesk, JetBrains_Mono } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
-import { CommandK } from "@/components/command-k/CommandK";
 import { Header } from "@/components/ui/Header";
-import { BottomNav } from "@/components/ui/BottomNav";
+import { Footer } from "@/components/ui/Footer";
 import { site } from "@/content/site";
 import "./globals.css";
 
@@ -15,7 +14,7 @@ const hankenGrotesk = Hanken_Grotesk({
 const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
   weight: ["400", "500"],
-  variable: "--font-mono",
+  variable: "--font-code",
 });
 
 export const metadata: Metadata = {
@@ -48,14 +47,14 @@ export default function RootLayout({
     <html lang="en" className={`${hankenGrotesk.variable} ${jetbrainsMono.variable}`}>
       <body>
         <ThemeProvider>
-          <div className="flex h-screen flex-col overflow-hidden">
+          <div className="site-layout">
+            <a className="skip-link" href="#main-content">
+              Skip to content
+            </a>
             <Header />
-            <main className="min-h-0 flex-1 overflow-hidden max-[720px]:overflow-y-auto max-[720px]:pb-[72px]">
-              {children}
-            </main>
-            <BottomNav />
+            <main id="main-content">{children}</main>
+            <Footer />
           </div>
-          <CommandK />
         </ThemeProvider>
       </body>
     </html>

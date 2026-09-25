@@ -26,38 +26,80 @@ const socials = [
     ),
   },
   {
-    href: `mailto:${site.social.email}`,
-    label: "Email",
+    href: site.social.github,
+    label: "GitHub",
     svg: (
-      <svg
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        className="block h-4 w-4"
-      >
-        <rect x="2" y="4" width="20" height="16" rx="2" />
-        <path d="m22 7-10 5L2 7" />
+      <svg viewBox="0 0 24 24" fill="currentColor" className="block h-4 w-4">
+        <path d="M12 .5a12 12 0 0 0-3.79 23.39c.6.11.82-.26.82-.58v-2.04c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.74.08-.74 1.2.09 1.83 1.23 1.83 1.23 1.07 1.83 2.8 1.3 3.49.99.11-.77.42-1.3.76-1.6-2.67-.3-5.47-1.34-5.47-5.95 0-1.31.47-2.38 1.23-3.22-.12-.3-.53-1.52.12-3.17 0 0 1-.32 3.3 1.23a11.4 11.4 0 0 1 6 0c2.29-1.55 3.29-1.23 3.29-1.23.66 1.65.25 2.87.13 3.17.76.84 1.22 1.91 1.22 3.22 0 4.62-2.81 5.64-5.48 5.94.43.37.81 1.1.81 2.22v3.29c0 .32.22.69.83.57A12 12 0 0 0 12 .5Z" />
       </svg>
     ),
   },
 ] as const;
 
+export function ContactLinks() {
+  return (
+    <div className="profile-links">
+      <a
+        href={`mailto:${site.social.email}`}
+        aria-label="Email"
+        title="Email"
+        style={{
+          display: "inline-flex",
+          alignItems: "center",
+          justifyContent: "center",
+          width: 32,
+          height: 32,
+        }}
+      >
+        <svg
+          aria-hidden="true"
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.7"
+        >
+          <rect x="3" y="5" width="18" height="14" rx="2" />
+          <path d="m3 6 9 7 9-7" />
+        </svg>
+      </a>
+      {socials.map((social) => (
+        <a
+          key={social.label}
+          href={social.href}
+          aria-label={social.label}
+          title={social.label}
+          target="_blank"
+          rel="noreferrer"
+          style={{
+            display: "inline-flex",
+            alignItems: "center",
+            justifyContent: "center",
+            width: 32,
+            height: 32,
+          }}
+        >
+          <span aria-hidden="true">{social.svg}</span>
+        </a>
+      ))}
+    </div>
+  );
+}
+
 export function Header() {
   const pathname = usePathname();
 
   return (
-    <header className="flex items-center justify-between border-b border-border px-12 py-[18px] max-[720px]:px-5 max-[720px]:py-[14px]">
-      <Link href="/" className="cursor-pointer text-[15px] font-semibold tracking-[-0.01em]">
-        {site.logo}
-      </Link>
-      <nav className="flex gap-7 max-[720px]:hidden">
+    <header className="site-header">
+      <nav className="primary-nav" aria-label="Primary">
         {navItems.map((item) => {
           const active = isActive(pathname, item.href);
           return (
             <Link
               key={item.href}
               href={item.href}
+              aria-current={active ? "page" : undefined}
               className={
                 active
                   ? "border-b-[1.5px] border-text pb-[3px] text-[14px] font-medium text-text"
@@ -69,18 +111,6 @@ export function Header() {
           );
         })}
       </nav>
-      <div className="flex gap-4">
-        {socials.map((s) => (
-          <a
-            key={s.label}
-            href={s.href}
-            aria-label={s.label}
-            className="text-text-3 transition-colors duration-150 hover:text-text"
-          >
-            {s.svg}
-          </a>
-        ))}
-      </div>
     </header>
   );
 }

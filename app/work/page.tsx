@@ -1,15 +1,52 @@
-import { WorkCards } from "@/components/ui/WorkCards";
-import { site } from "@/content/site";
+import Link from "next/link";
+import { experience } from "@/content/experience";
 
 export default function WorkPage() {
   return (
-    // Scroll region: centers the cards when they fit, scrolls with even
-    // top/bottom padding when they don't (9 cards overflow one viewport).
-    <div className="h-full overflow-y-auto max-[720px]:overflow-visible">
-      <div className="flex min-h-full w-full flex-col justify-center px-12 py-12 max-[720px]:px-5 max-[720px]:py-7">
-        <h1 className="sr-only">{site.pages.work}</h1>
-        <WorkCards />
-      </div>
+    <div className="shell collection-page">
+      <header className="page-intro">
+        <h1>Experience</h1>
+        <p>
+          Product decisions, developer experience, launches, and the day-to-day work of getting a
+          team moving in the same direction.
+        </p>
+      </header>
+      {experience.map((item) => (
+        <article
+          className="experience-detail"
+          id={item.company.toLowerCase().replaceAll(" ", "-")}
+          key={item.company}
+        >
+          <div>
+            <span className="small-label">{item.period}</span>
+            <h2>{item.company}</h2>
+            <p className="item-role">{item.role}</p>
+          </div>
+          <div>
+            <p className="experience-summary">{item.summary}</p>
+            <ul className="contribution-list">
+              {item.contributions.map((line) => (
+                <li key={line}>{line}</li>
+              ))}
+            </ul>
+            {item.href && (
+              <Link className="text-link" href={item.href}>
+                Read the product case study →
+              </Link>
+            )}
+          </div>
+        </article>
+      ))}
+      <aside className="related-panel">
+        <h2>More product thinking</h2>
+        <p>
+          Explore my fellowship case studies and independent exercises, from activation strategy to
+          UX audits.
+        </p>
+        <Link className="text-link" href="/case-studies">
+          Explore product case studies →
+        </Link>
+      </aside>
     </div>
   );
 }

@@ -1,11 +1,11 @@
 export const caseStudies = [
   {
-    title: "n8n activation and first workflow",
-    format: "Activation strategy · Project deck",
-    summary: "Research into the gap between exploring workflow templates and reaching a first live deployment, with a proposed guided learning path and in-canvas assistant.",
-    href: "https://assets.nextleap.app/submissions/NLn8n-0c10e538-7621-4a57-a830-14802f8aaff3.pdf",
+    title: "Gumloop onboarding teardown",
+    format: "Product teardown",
+    summary: "An examination of the onboarding journey and how users reach value in an AI workflow product.",
+    href: "https://assets.nextleap.app/submissions/LIP2-ProductTeardown-9039d7c5-f443-45a6-a2d1-b71986a4474d.pdf2-3e701fb2-6175-4937-9d6a-51fb78ae33a1.pdf",
     linkLabel: "View",
-    thumbnail: "/case-studies/n8n-activation.png",
+    thumbnail: "https://assets.nextleap.app/image/eyJidWNrZXQiOiJuZXh0bGVhcC1zdGF0aWMtYXNzZXRzIiwia2V5IjoiaW1hZ2VzL0xJUDItUHJvZHVjdFRlYXJkb3duLTkwMzlkN2M1LWY0NDMtNDVhNi1hMmQxLWI3MTk4NmE0NDc0ZC5wZGYtNzJkODY3ZTMtYzg2My00MDVlLTk2YzgtMjMyMjQwYTU0ZTZlLmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6NTk3LjMzMzMzMzMzMzMzMzMsImhlaWdodCI6MzM2LCJmaXQiOiJjb3ZlciIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sInJvdGF0ZSI6bnVsbH19",
   },
   {
     title: "Gemini UX audit",
@@ -16,12 +16,12 @@ export const caseStudies = [
     thumbnail: "https://assets.nextleap.app/image/eyJidWNrZXQiOiJuZXh0bGVhcC1zdGF0aWMtYXNzZXRzIiwia2V5IjoiaW1hZ2VzL0dvb2dsZUdlbWluaVVYQW5hbHlzaXNMYXdzb2ZVWEV2YWx1YXRpb25fTElQLWU3N2YzNDlkLTA5YTctNDI3Ni05ZDQxLWYwMWI1YWYzMmE4OC5wZGYtYTY1YTIxOTctNjczMS00MjA0LTllYWQtMDE2YjUxNzc0Nzk2LmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6NTk3LjMzMzMzMzMzMzMzMzMsImhlaWdodCI6MzM2LCJmaXQiOiJjb3ZlciIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sInJvdGF0ZSI6bnVsbH19",
   },
   {
-    title: "Gumloop onboarding teardown",
-    format: "Product teardown",
-    summary: "An examination of the onboarding journey and how users reach value in an AI workflow product.",
-    href: "https://assets.nextleap.app/submissions/LIP2-ProductTeardown-9039d7c5-f443-45a6-a2d1-b71986a4474d.pdf2-3e701fb2-6175-4937-9d6a-51fb78ae33a1.pdf",
+    title: "n8n activation and first workflow",
+    format: "Activation strategy · Project deck",
+    summary: "Research into the gap between exploring workflow templates and reaching a first live deployment, with a proposed guided learning path and in-canvas assistant.",
+    href: "https://assets.nextleap.app/submissions/NLn8n-0c10e538-7621-4a57-a830-14802f8aaff3.pdf",
     linkLabel: "View",
-    thumbnail: "https://assets.nextleap.app/image/eyJidWNrZXQiOiJuZXh0bGVhcC1zdGF0aWMtYXNzZXRzIiwia2V5IjoiaW1hZ2VzL0xJUDItUHJvZHVjdFRlYXJkb3duLTkwMzlkN2M1LWY0NDMtNDVhNi1hMmQxLWI3MTk4NmE0NDc0ZC5wZGYtNzJkODY3ZTMtYzg2My00MDVlLTk2YzgtMjMyMjQwYTU0ZTZlLmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6NTk3LjMzMzMzMzMzMzMzMzMsImhlaWdodCI6MzM2LCJmaXQiOiJjb3ZlciIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sInJvdGF0ZSI6bnVsbH19",
+    thumbnail: "/case-studies/n8n-activation.png",
   },
   {
     title: "Bumble date-planning assistant",

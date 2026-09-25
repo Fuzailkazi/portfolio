@@ -13,11 +13,11 @@ export default function AboutPage() {
   ];
 
   return (
-    // Scroll region: About is a long, top-aligned document — let it scroll
-    // within the fixed shell instead of being clipped at the fold.
-    <div className="h-full overflow-y-auto p-12 max-[720px]:px-5 max-[720px]:py-7">
-      <h1 className="sr-only">{site.pages.about}</h1>
+    <div className="shell collection-page">
       <div className="mx-auto max-w-[640px]">
+        <header className="page-intro">
+          <h1>{site.pages.about}</h1>
+        </header>
         <p className="mb-8 max-w-[540px] text-[16px] text-text-2">{about.bio}</p>
 
         <SectionLabel>{about.labels.trajectory}</SectionLabel>
@@ -35,7 +35,10 @@ export default function AboutPage() {
 
         <SectionLabel>{about.labels.whatIRun}</SectionLabel>
         {about.runs.map((run) => (
-          <div key={run.name} className="mb-[10px] flex items-baseline gap-[14px]">
+          <div
+            key={run.name}
+            className="mb-[10px] flex items-baseline gap-[14px] max-[720px]:flex-col max-[720px]:gap-1"
+          >
             <b className="min-w-[180px] text-[14px] font-semibold">{run.name}</b>
             <p className="text-[13px] text-text-2">{run.description}</p>
           </div>

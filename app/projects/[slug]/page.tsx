@@ -12,7 +12,7 @@ export default async function ProjectStoryPage(props: PageProps<"/projects/[slug
   if (!story) notFound();
 
   return (
-    <div className="h-full overflow-y-auto p-12 max-[720px]:px-5 max-[720px]:py-7">
+    <div className="shell collection-page">
       <article className="mx-auto max-w-[680px]">
         <Link
           href="/projects"
