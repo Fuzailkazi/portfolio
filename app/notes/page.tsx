@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { site } from "@/content/site";
-import { formatNoteDate, getAllNotes } from "@/lib/notes";
+import { getAllNotes } from "@/lib/notes";
 
 export default async function NotesPage() {
   const notes = await getAllNotes();
@@ -21,7 +21,7 @@ export default async function NotesPage() {
             </b>
             <p className="mt-1 text-[13px] text-text-2">{note.excerpt}</p>
             <span className="mt-[6px] block text-[12px] text-text-3">
-              {note.readTime} · {formatNoteDate(note.date)}
+              {note.readTime}
             </span>
           </Link>
         ))}

@@ -13,14 +13,9 @@ function CardAction({ item }: { item: Project }) {
       );
     case "link":
       return (
-        <a
-          href={item.url}
-          target="_blank"
-          rel="noreferrer"
-          className="cursor-pointer text-[12px] text-accent"
-        >
-          {projectsPage.visitLabel}
-        </a>
+        <span className="text-[12px] text-accent">
+          {item.actionLabel ?? projectsPage.visitLabel}
+        </span>
       );
     case "prompt":
       return <CopyButton text={item.prompt ?? ""} />;
@@ -46,6 +41,20 @@ export default function ProjectsPage() {
                 <p className="mt-1 text-[13px] text-text-2">{item.description}</p>
                 <span className="mt-2 font-mono text-[10px] text-text-3">IN PROGRESS</span>
               </div>
+            ) : item.type === "link" ? (
+              <a
+                key={item.title}
+                href={item.url}
+                target={item.url?.startsWith("/") ? undefined : "_blank"}
+                rel={item.url?.startsWith("/") ? undefined : "noreferrer"}
+                className="block rounded border border-border p-4 text-text no-underline transition-all duration-200 hover:border-border-2 hover:bg-[#FCFCFC]"
+              >
+                <div className="mb-2 flex items-center justify-between">
+                  <b className="text-[14px] font-semibold">{item.title}</b>
+                  <CardAction item={item} />
+                </div>
+                <p className="text-[13px] text-text-2">{item.description}</p>
+              </a>
             ) : (
               <div
                 key={item.title}

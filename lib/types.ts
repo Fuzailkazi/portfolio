@@ -123,6 +123,7 @@ export interface Project {
   type: ProjectType;
   url?: string;
   prompt?: string;
+  actionLabel?: string;
 }
 
 /** Copy for the Projects view chrome. */

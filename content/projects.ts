@@ -12,26 +12,30 @@ export const projectsPage: ProjectsPageContent = {
 export const projects: Project[] = [
   {
     title: "Flow Trace",
-    description: "A side project I am currently working on.",
+    description: "A local-first macOS memory system for capturing work context, finding it later, and connecting notes with projects, pages, terminals, and coding sessions.",
     type: "link",
-    url: "https://github.com/Fuzailkazi/flowtrace",
+    url: "/projects/flowtrace",
+    actionLabel: "read story →",
   },
   {
     title: "AI RedTeaming agent",
     description: "A personal agent security testing tool I built to explore how AI agents can be probed, evaluated, and hardened.",
     type: "link",
-    url: "https://redagent-web.vercel.app/",
+    url: "/projects/redagent",
+    actionLabel: "read story →",
   },
   {
     title: "Orbbit AI",
     description: "A personal AI product build for exploring agentic workflows and productized AI experiences.",
     type: "link",
-    url: "https://orbbit-ai.vercel.app/",
+    url: "/projects/orbbit",
+    actionLabel: "read story →",
   },
   {
     title: "Causely Feature Impact Simulator",
     description: "A personal product experiment for exploring how a feature idea could affect activation, retention, revenue, and NPS.",
     type: "link",
-    url: "https://causely-liard.vercel.app/",
+    url: "/projects/causely",
+    actionLabel: "read story →",
   },
 ];

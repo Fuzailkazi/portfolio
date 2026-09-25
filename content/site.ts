@@ -3,9 +3,9 @@ import type { SiteContent } from "@/lib/types";
 export const site: SiteContent = {
   name: "Fuzail Kazi",
   logo: "Fuzail",
-  role: "AI product · agent building · developer relations · GTM",
+  role: "AI product · product engineering · developer relations · GTM",
   positioning:
-    "I take technical AI products from problem discovery and hands-on agent prototypes to developer adoption and go-to-market.",
+    "I take technical AI products from problem discovery and hands-on prototyping through developer adoption and go-to-market.",
   url: "https://example.com",
   social: {
     github: "https://github.com/Fuzailkazi",
