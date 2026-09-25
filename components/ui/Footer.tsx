@@ -11,7 +11,6 @@ export function Footer() {
         <ContactLinks />
         <div className="footer-bottom">
           <span>{site.name}</span>
-          <Link href="/about">About</Link>
           <Link href="/changelog">Changelog</Link>
         </div>
       </div>
