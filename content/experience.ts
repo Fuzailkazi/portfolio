@@ -37,6 +37,18 @@ export const experience = [
       "Connected community feedback with the product team to surface recurring needs.",
     ],
   },
+  {
+    company: "Eastern Royal Company",
+    role: "Product Intern",
+    period: "Jan 2022 — Dec 2022",
+    summary:
+      "Worked with a college-incubated startup founded by university seniors, helping develop games and immersive VR experiences.",
+    contributions: [
+      "Served as Product Manager for Local Streets, a GTA-inspired open-world game, and voiced one of its characters.",
+      "Helped develop a VR campus tour for MIT ADT University.",
+      "Contributed to a VR recreation of Raigad Fort, a large-scale real-time heritage experience created for government stakeholders.",
+    ],
+  },
 ];
 
 export const advocacy = [
