@@ -26,6 +26,14 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) in your browser.
 
+To run the development server on port 3001 instead, use:
+
+```bash
+npm run dev -- --port 3001
+```
+
+Then open [http://localhost:3001](http://localhost:3001).
+
 ## Commands
 
 ```bash
