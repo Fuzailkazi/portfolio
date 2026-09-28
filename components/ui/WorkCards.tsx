@@ -49,6 +49,16 @@ function Card({ item, flipped, onFlip }: { item: WorkItem; flipped: boolean; onF
         </p>
         {flipped ? (
           <>
+            {item.figures && item.figures.length > 0 && (
+              <dl className="mt-3 grid grid-cols-2 gap-3 border-t border-black/10 pt-3">
+                {item.figures.map((figure) => (
+                  <div key={figure.label}>
+                    <dt className="font-mono text-[10px] text-text-3">{figure.label}</dt>
+                    <dd className="text-[15px] font-semibold text-text">{figure.value}</dd>
+                  </div>
+                ))}
+              </dl>
+            )}
             <div className="mt-2 text-[12px] text-text-2">
               {workPage.callPrefix}
               {item.call}
@@ -61,7 +71,9 @@ function Card({ item, flipped, onFlip }: { item: WorkItem; flipped: boolean; onF
                 onClick={(event) => event.stopPropagation()}
                 className="mt-[6px] inline-block text-[12px] font-medium text-accent"
               >
-                {item.externalUrl ? "open project →" : workPage.caseLinkLabel}
+                {item.externalUrl
+                  ? "open project →"
+                  : (item.detailLinkText ?? workPage.caseLinkLabel)}
               </Link>
             )}
           </>

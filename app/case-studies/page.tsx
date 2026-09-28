@@ -8,8 +8,8 @@ export default function CaseStudiesPage() {
         <header className="page-intro">
           <h1>{site.pages.caseStudies}</h1>
           <p>
-            NextLeap Product Manager Fellowship projects and independent product exercises,
-            exploring activation, onboarding, and user experience.
+            Product case studies and independent product exercises exploring activation,
+            onboarding, and user experience.
           </p>
         </header>
         <div className="grid grid-cols-2 gap-[14px] max-[720px]:grid-cols-1">

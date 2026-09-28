@@ -1,10 +1,10 @@
 import type { AboutContent } from "@/lib/types";
 
 export const about: AboutContent = {
-  bio: "I'm Fuzail Kazi, an AI product manager and builder working across agent development, developer relations, and go-to-market. At ArmorIQ, I help shape and ship AI products, bring developer and customer feedback into product decisions, and work on the docs, content, and launch efforts that help people understand and adopt them. I also build and test agent prototypes myself, so I can get close to the technology, spot rough edges, and collaborate effectively with engineering. Before ArmorIQ, I was the sole PM at AccelChain and started my career in developer relations. I like taking a problem from first conversation through product decisions, a working build, and adoption.",
+  bio: "I’m a product operator focused on technical AI products. I work across product direction, developer adoption, go-to-market, and company operations, taking ideas from early discovery through a working product and into the hands of users. At ArmorIQ, I shape and ship AI products, build and test agent prototypes, and lead work across the India team. Earlier, I was a Product Engineer at AccelChain, combining product ownership, code contributions, and developer relations.",
   labels: {
     trajectory: "Trajectory",
-    whatIRun: "What I run",
+    whatIRun: "What I bring",
     operatingManual: "Operating manual",
   },
   trajectory: [
@@ -28,15 +28,21 @@ export const about: AboutContent = {
     },
     {
       version: "v2.0",
-      role: "AccelChain · Product Manager",
+      role: "AccelChain · Product Engineer",
       date: "2024–25",
-      line: "Sole PM for a developer platform serving 5,000+ daily developers across AI and Web3.",
+      line: "Combined product management, code contributions, and developer relations for an AI and Web3 platform serving 5,000+ daily developers.",
     },
     {
       version: "v1.3",
       role: "DApp World · Developer Relations",
       date: "2023",
       line: "Voice of 1,200+ developers; turned community signal into product.",
+    },
+    {
+      version: "v1.1",
+      role: "Eastern Royal Company · Product Intern",
+      date: "2022",
+      line: "Joined a college-incubated startup and worked on Local Streets and immersive VR experiences.",
     },
     {
       version: "v1.0",
@@ -46,11 +52,33 @@ export const about: AboutContent = {
     },
   ],
   runs: [
-    { name: "AI product", description: "discovery, product direction, agent workflows, testing, and launch" },
-    { name: "Developer adoption", description: "developer feedback, docs, technical content, and community" },
-    { name: "India leadership", description: "local team ownership, office operations, coordination, and India GTM" },
-    { name: "Hands-on building", description: "prototype agents, understand the code, and test the experience" },
+    {
+      name: "Product leadership",
+      description:
+        "At ArmorIQ, help take AI products from an early idea through product direction, market feedback, prototyping, and launch. I own Armor Tools, one of ArmorIQ’s products.",
+    },
+    {
+      name: "Developer relations",
+      description:
+        "At AccelChain, paired product engineering and product ownership with developer relations for a platform serving 5,000+ daily developers. At DApp World, worked with a community of 1,200+ developers.",
+    },
+    {
+      name: "GTM and operations",
+      description:
+        "Lead India go-to-market and take responsibility for the local team, office operations, partnerships, and the coordination that keeps work moving.",
+    },
+    {
+      name: "Technical fluency",
+      description:
+        "Build and test agent prototypes, work closely with engineering, and create documentation and examples that help developers put products to use.",
+    },
   ],
-  runScope: "product thinking + technical fluency + developer trust + market execution",
-  tasteLabels: { now: "Building", stack: "Stack", reading: "Rabbit hole", obsessedWith: "Hot take" },
+  runScope:
+    "I’m most useful when product, engineering, developers, and go-to-market need to move together.",
+  tasteLabels: {
+    now: "Building",
+    stack: "Stack",
+    reading: "Rabbit hole",
+    obsessedWith: "Hot take",
+  },
 };

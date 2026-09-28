@@ -2,6 +2,7 @@ import { site } from "@/content/site";
 
 /** Single source for the primary nav — shared by the header and the mobile bottom bar. */
 export const navItems = [
+  { href: "/", label: site.pages.home },
   { href: "/work", label: site.pages.work },
   { href: "/case-studies", label: site.pages.caseStudies },
   { href: "/projects", label: site.pages.projects },

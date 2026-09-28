@@ -9,6 +9,18 @@ import { projectStories } from "@/content/project-stories";
 import { caseStudies } from "@/content/case-studies";
 import { getAllNotes } from "@/lib/notes";
 
+function renderEmphasis(text: string) {
+  return text.split(/(\*\*.*?\*\*)/g).map((part, index) =>
+    part.startsWith("**") && part.endsWith("**") ? (
+      <strong key={index} className="font-semibold text-text">
+        {part.slice(2, -2)}
+      </strong>
+    ) : (
+      part
+    ),
+  );
+}
+
 export default async function HomePage() {
   const notes = (await getAllNotes()).slice(0, 3);
   return (
@@ -67,7 +79,7 @@ export default async function HomePage() {
               <span>{item.period}</span>
             </div>
             <p className="profile-role">{item.role}</p>
-            <p>{item.summary}</p>
+            <p>{renderEmphasis(item.summary)}</p>
           </article>
         ))}
       </section>
@@ -80,7 +92,7 @@ export default async function HomePage() {
           </Link>
         </div>
         <p className="section-intro">
-          Product research, UX audits, and ideas from my NextLeap fellowship.
+          Product research, UX audits, and independent product exercises.
         </p>
         <div className="study-grid">
           {caseStudies.slice(0, 2).map((study) => (

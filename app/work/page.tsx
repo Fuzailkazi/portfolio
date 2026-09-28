@@ -1,6 +1,18 @@
 import Link from "next/link";
 import { experience } from "@/content/experience";
 
+function renderEmphasis(text: string) {
+  return text.split(/(\*\*.*?\*\*)/g).map((part, index) =>
+    part.startsWith("**") && part.endsWith("**") ? (
+      <strong key={index} className="font-semibold text-text">
+        {part.slice(2, -2)}
+      </strong>
+    ) : (
+      part
+    ),
+  );
+}
+
 export default function WorkPage() {
   return (
     <div className="shell collection-page">
@@ -23,15 +35,15 @@ export default function WorkPage() {
             <p className="item-role">{item.role}</p>
           </div>
           <div>
-            <p className="experience-summary">{item.summary}</p>
+            <p className="experience-summary">{renderEmphasis(item.summary)}</p>
             <ul className="contribution-list">
               {item.contributions.map((line) => (
-                <li key={line}>{line}</li>
+                <li key={line}>{renderEmphasis(line)}</li>
               ))}
             </ul>
             {item.href && (
               <Link className="text-link" href={item.href}>
-                Read the product case study →
+                {item.linkLabel ?? "Read the product case study →"}
               </Link>
             )}
           </div>

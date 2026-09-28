@@ -18,7 +18,7 @@ export const changelog: ChangelogEntry[] = [
   {
     version: "v2.0",
     date: "2024–25",
-    entry: "Product Manager at AccelChain, 18 months owning product end to end",
+    entry: "Product Engineer at AccelChain, 18 months combining product ownership, coding, and developer relations",
   },
   { version: "v1.4", date: "2024", entry: "Graduated B.Tech, MIT ADT University" },
   { version: "v1.3", date: "2023", entry: "DevRel at DApp World, grew the developer community" },

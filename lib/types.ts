@@ -67,10 +67,14 @@ export interface ChangelogEntry {
 
 export interface CaseStudy {
   scope: string;
-  mess: string;
-  call: string;
-  system: string;
-  result: string;
+  mess?: string;
+  call?: string;
+  system?: string;
+  result?: string;
+  intro?: string;
+  figures?: { value: string; label: string }[];
+  chapters?: { title: string; points: string[] }[];
+  resources?: { label: string; href: string; kind?: string }[];
 }
 
 export interface WorkItem {
@@ -91,6 +95,10 @@ export interface WorkItem {
   externalUrl?: string;
   /** Short context displayed with the work item. */
   category?: string;
+  /** Optional detail-page copy for experience stories. */
+  detailLinkText?: string;
+  detailTitleSuffix?: string;
+  figures?: { value: string; label: string }[];
   caseStudy?: CaseStudy;
 }
 

@@ -20,6 +20,18 @@ export default function AboutPage() {
         </header>
         <p className="mb-8 max-w-[540px] text-[16px] text-text-2">{about.bio}</p>
 
+        <SectionLabel>{about.labels.whatIRun}</SectionLabel>
+        {about.runs.map((run) => (
+          <div
+            key={run.name}
+            className="mb-[10px] flex items-baseline gap-[14px] max-[720px]:flex-col max-[720px]:gap-1"
+          >
+            <b className="min-w-[180px] text-[14px] font-semibold">{run.name}</b>
+            <p className="text-[13px] text-text-2">{run.description}</p>
+          </div>
+        ))}
+        <p className="mt-[14px] mb-8 font-mono text-[12px] text-text-3">{about.runScope}</p>
+
         <SectionLabel>{about.labels.trajectory}</SectionLabel>
         <div className="mb-8 border-l-2 border-border-2 pl-5">
           {about.trajectory.map((item) => (
@@ -32,18 +44,6 @@ export default function AboutPage() {
             </div>
           ))}
         </div>
-
-        <SectionLabel>{about.labels.whatIRun}</SectionLabel>
-        {about.runs.map((run) => (
-          <div
-            key={run.name}
-            className="mb-[10px] flex items-baseline gap-[14px] max-[720px]:flex-col max-[720px]:gap-1"
-          >
-            <b className="min-w-[180px] text-[14px] font-semibold">{run.name}</b>
-            <p className="text-[13px] text-text-2">{run.description}</p>
-          </div>
-        ))}
-        <p className="mt-[14px] mb-8 font-mono text-[12px] text-text-3">{about.runScope}</p>
 
         <SectionLabel>{about.labels.operatingManual}</SectionLabel>
         <div className="mb-8 grid grid-cols-2 gap-x-6 gap-y-[10px] max-[720px]:grid-cols-1">
