@@ -6,7 +6,7 @@ export default function ProjectsPage() {
   return (
     <div className="shell collection-page">
       <header className="page-intro">
-        <h1>Things I’m building</h1>
+        <h1>Builds</h1>
         <p>
           Personal projects across work context, agent security, AI model selection, and product
           decisions. Each story covers the problem, the decisions, and what I learned by building.
@@ -17,7 +17,18 @@ export default function ProjectsPage() {
         return (
           <article className="experience-detail" key={project.title}>
             <div>
-              <span className="small-label">0{index + 1} / Personal project</span>
+              <div className="flex items-center gap-3">
+                <span className="small-label">0{index + 1} / Personal project</span>
+                {project.statusLabel && (
+                  <span className="flex items-center gap-2 text-[11px] text-text-2">
+                    <span
+                      aria-hidden="true"
+                      className="h-[7px] w-[7px] animate-pulse-dot rounded-full bg-black"
+                    />
+                    {project.statusLabel}
+                  </span>
+                )}
+              </div>
               <h2>{story?.title ?? project.title}</h2>
             </div>
             <div>

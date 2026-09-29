@@ -6,6 +6,8 @@ import { getNoteSlugs } from "@/lib/notes";
 
 // /coffee is intentionally excluded — it's unlisted (see app/coffee/page.tsx).
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  if (!site.url) return [];
+
   const staticRoutes = [
     "",
     "/work",

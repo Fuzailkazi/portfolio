@@ -11,7 +11,7 @@ export interface SiteContent {
   /** One-line positioning statement. */
   positioning: string;
   /** Canonical production URL, used for metadata + sitemap. */
-  url: string;
+  url?: string;
   social: {
     github: string;
     linkedin: string;
@@ -132,6 +132,7 @@ export interface Project {
   url?: string;
   prompt?: string;
   actionLabel?: string;
+  statusLabel?: string;
 }
 
 /** Copy for the Projects view chrome. */

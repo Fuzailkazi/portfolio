@@ -1,7 +1,7 @@
 import type { AboutContent } from "@/lib/types";
 
 export const about: AboutContent = {
-  bio: "I’m a product operator focused on technical AI products. I work across product direction, developer adoption, go-to-market, and company operations, taking ideas from early discovery through a working product and into the hands of users. At ArmorIQ, I shape and ship AI products, build and test agent prototypes, and lead work across the India team. Earlier, I was a Product Engineer at AccelChain, combining product ownership, code contributions, and developer relations.",
+  bio: "I’m a product operator focused on technical AI products. I work across product direction, developer adoption, go-to-market, and company operations, taking ideas from early discovery through a working product and into the hands of users. At ArmorIQ, I shape and ship AI products, build and test agent prototypes, and lead work across the India team. Earlier, I was a Product Manager at AccelChain (Acqui-hired), combining product ownership, code contributions, and developer relations.",
   labels: {
     trajectory: "Trajectory",
     whatIRun: "What I bring",
@@ -28,7 +28,7 @@ export const about: AboutContent = {
     },
     {
       version: "v2.0",
-      role: "AccelChain · Product Engineer",
+      role: "AccelChain (Acqui-hired) · Product Manager",
       date: "2024–25",
       line: "Combined product management, code contributions, and developer relations for an AI and Web3 platform serving 5,000+ daily developers.",
     },
@@ -39,16 +39,22 @@ export const about: AboutContent = {
       line: "Voice of 1,200+ developers; turned community signal into product.",
     },
     {
-      version: "v1.1",
+      version: "v1.2",
       role: "Eastern Royal Company · Product Intern",
       date: "2022",
       line: "Joined a college-incubated startup and worked on Local Streets and immersive VR experiences.",
     },
     {
+      version: "v1.1",
+      role: "MIT Cybersecurity & Blockchain Club · Co-founder",
+      date: "2022",
+      line: "Co-founded the Cybersecurity & Blockchain Club at MIT ADT University and led it for two years.",
+    },
+    {
       version: "v1.0",
       role: "MIT ADT University · B.Tech",
       date: "2020–24",
-      line: "Where it started. Founded and led the Cybersecurity & Blockchain Club for two years.",
+      line: "Started my B.Tech at MIT ADT University.",
     },
   ],
   runs: [
@@ -60,7 +66,7 @@ export const about: AboutContent = {
     {
       name: "Developer relations",
       description:
-        "At AccelChain, paired product engineering and product ownership with developer relations for a platform serving 5,000+ daily developers. At DApp World, worked with a community of 1,200+ developers.",
+        "At AccelChain (Acqui-hired), paired product management with developer relations for a platform serving 5,000+ daily developers. At DApp World, worked with a community of 1,200+ developers.",
     },
     {
       name: "GTM and operations",

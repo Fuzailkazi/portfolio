@@ -8,9 +8,9 @@ export const experience = [
     contributions: [
       "**Owned product vision, strategy, and roadmap** for the agent runtime security SDK and platform, serving AI engineers, security teams, and internal product teams. Built the product function around **250+ discovery conversations**.",
       "**Defined the shared API and SDK foundation** across authentication, policy invocation, tool permissions, logging, failure states, usage metering, and integration behavior.",
-      "**Took the SDK from zero to 31,000+ developers**, including **26,000 in four months**, by instrumenting activation, diagnosing integration failures, and dedicating a quarter to documentation and developer experience.",
+      "**Improved the SDK adoption journey** by instrumenting activation, diagnosing integration failures, and prioritizing documentation and developer experience.",
       "**Shipped three security products from one integration pattern: ArmorClaude, ArmorCodex, and ArmorClaw.** ArmorGemini is in development.",
-      "**Supported customer adoption at ArmorIQ as the company reached $300K MRR**, building tailored demos, onboarding customers and partners, and translating their feedback into product improvements.",
+      "**Supported customer adoption at ArmorIQ**, building tailored demos, onboarding customers and partners, and translating their feedback into product improvements.",
       "**Owned security evaluation strategy** for prompt injection, tool misuse, excessive permissions, and unsafe agent behavior, balancing enforcement with developer experience and latency budgets.",
       "**Lead India GTM and developer programs**, connecting university and community partnerships to adoption; organized **20+ events in one year** and own documentation, cookbook examples, and developer-facing launch content.",
     ],
@@ -19,13 +19,14 @@ export const experience = [
   },
   {
     company: "AccelChain",
-    role: "Product Engineer",
+    displayCompany: "AccelChain (Acqui-hired)",
+    role: "Product Manager",
     period: "2024 — 2025",
     summary:
       "Worked across **product management and developer relations**, turning developer feedback into product priorities and helping teams get started with AccelChain.",
     contributions: [
       "**Managed product priorities and requirements** for a platform serving **5,000+ daily active developers**, working with engineering on improvements informed by developer feedback.",
-      "**Interviewed 30+ developers and helped improve SDK onboarding**, reducing integration failures by **30%** and time-to-first-deploy by **35%**.",
+      "**Interviewed 30+ developers and helped improve the platform deployment flow**. The team’s changes reduced time-to-first-deploy by **35%**.",
       "**Led product planning and launch for AccelChain Marketplace**, which became the platform's **largest acquisition channel within two months**.",
       "**Supported developer adoption through documentation, tutorials, workshops, and the AccelChain Build Program**, which supported **100+ developers** and **20+ production-ready projects**.",
       "**Contributed to Solana and Polkadot platform integrations** as part of the team's grant-supported ecosystem work.",

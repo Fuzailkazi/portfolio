@@ -18,16 +18,21 @@ export const changelog: ChangelogEntry[] = [
   {
     version: "v2.0",
     date: "2024–25",
-    entry: "Product Engineer at AccelChain, 18 months combining product ownership, coding, and developer relations",
+    entry:
+      "Product Manager at AccelChain (Acqui-hired), 18 months combining product ownership, coding, and developer relations",
   },
   { version: "v1.4", date: "2024", entry: "Graduated B.Tech, MIT ADT University" },
   { version: "v1.3", date: "2023", entry: "DevRel at DApp World, grew the developer community" },
   {
     version: "v1.2",
-    date: "2022–24",
-    entry: "VP & founding member, MIT Cybersecurity & Blockchain Club",
+    date: "2022",
+    entry: "Product Intern at Eastern Royal Company, working on Local Streets and VR experiences",
   },
-  { version: "v1.1", date: "2022", entry: "Product management intern at ERC" },
+  {
+    version: "v1.1",
+    date: "2022",
+    entry: "Co-founded MIT Cybersecurity & Blockchain Club and led it for two years",
+  },
   { version: "v1.0", date: "2020", entry: "Started at MIT ADT University" },
   { version: "v0.1", date: "——", entry: "Born. Mostly crying. No roadmap." },
 ];

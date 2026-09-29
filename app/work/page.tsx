@@ -1,3 +1,4 @@
+import { pmPortfolio } from "@/content/pm-portfolio";
 import Link from "next/link";
 import { experience } from "@/content/experience";
 
@@ -18,10 +19,7 @@ export default function WorkPage() {
     <div className="shell collection-page">
       <header className="page-intro">
         <h1>Experience</h1>
-        <p>
-          Product decisions, developer experience, launches, and the day-to-day work of getting a
-          team moving in the same direction.
-        </p>
+        <p>{pmPortfolio.workIntro}</p>
       </header>
       {experience.map((item) => (
         <article
@@ -31,7 +29,7 @@ export default function WorkPage() {
         >
           <div>
             <span className="small-label">{item.period}</span>
-            <h2>{item.company}</h2>
+            <h2>{item.displayCompany ?? item.company}</h2>
             <p className="item-role">{item.role}</p>
           </div>
           <div>

@@ -3,10 +3,10 @@ import type { SiteContent } from "@/lib/types";
 export const site: SiteContent = {
   name: "Fuzail Kazi",
   logo: "Fuzail",
-  role: "AI product · product engineering · developer relations · GTM",
+  role: "Product Manager · Product Strategy & Delivery",
   positioning:
-    "I take technical AI products from problem discovery and hands-on prototyping through developer adoption and go-to-market.",
-  url: "https://example.com",
+    "Product Manager experienced in customer discovery, product strategy, prioritization, and taking products from idea through launch.",
+  url: process.env.NEXT_PUBLIC_SITE_URL,
   social: {
     github: "https://github.com/Fuzailkazi",
     linkedin: "https://www.linkedin.com/in/fuzail-kazi/",
@@ -17,7 +17,7 @@ export const site: SiteContent = {
     home: "Home",
     work: "Work",
     caseStudies: "Case Studies",
-    projects: "Building",
+    projects: "Builds",
     notes: "Writing",
     about: "About",
     changelog: "Changelog",

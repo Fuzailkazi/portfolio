@@ -2,7 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import ReactMarkdown from "react-markdown";
 import { site } from "@/content/site";
-import { formatNoteDate, getNote, getNoteSlugs } from "@/lib/notes";
+import { getNote, getNoteSlugs } from "@/lib/notes";
 
 export async function generateStaticParams() {
   const slugs = await getNoteSlugs();
@@ -24,10 +24,7 @@ export default async function NotePage(props: PageProps<"/notes/[slug]">) {
           {site.notes.backLabel}
         </Link>
         <h1 className="text-[24px] font-semibold tracking-[-0.01em]">{note.title}</h1>
-        <p className="mt-[6px] mb-6 text-[12px] text-text-3">
-          {note.readTime} · {formatNoteDate(note.date)}
-        </p>
-        <div className="space-y-4 text-[16px] text-text-2">
+        <div className="mt-6 space-y-4 text-[16px] text-text-2">
           <ReactMarkdown>{note.body}</ReactMarkdown>
         </div>
       </div>

@@ -25,17 +25,16 @@ export const work: WorkItem[] = [
     slug: "armoriq",
     title: "ArmorIQ",
     icon: "shield",
-    before: "ArmorIQ began as an idea that needed product direction, customer learning, developer adoption, and company-wide execution to become real.",
-    after: "I joined as the first hire and now serve as Chief of Staff, working with the founders across product, customers, developer relations, GTM, hiring, and operations.",
+    before:
+      "ArmorIQ began as an idea that needed product direction, customer learning, developer adoption, and company-wide execution to become real.",
+    after:
+      "I joined as the first hire and now serve as Chief of Staff, working with the founders across product, customers, developer relations, GTM, hiring, and operations.",
     call: "Connect product decisions to customer evidence, developer adoption, and the execution needed to move the company forward.",
     scope: "Chief of Staff · Founding Product Manager",
     category: "ArmorIQ · 2025–present",
     detailLinkText: "Read the full story →",
     detailTitleSuffix: " · full story",
-    figures: [
-      { value: "31,000+", label: "SDK developers" },
-      { value: "20+", label: "events organized in one year" },
-    ],
+    figures: [{ value: "20+", label: "events organized in one year" }],
     hasCase: true,
     full: false,
     caseStudy: {
@@ -93,8 +92,8 @@ export const work: WorkItem[] = [
           title: "Developer relations and go-to-market",
           points: [
             "**Started ArmorIQ's developer program**, connecting technical education, community engagement, onboarding, and product feedback.",
-            "**Took the SDK from zero to 31,000+ developers, including 26,000 in four months**, by instrumenting activation, diagnosing integration failures, and prioritizing a quarter focused on documentation and developer experience.",
-            "**Supported customer adoption at ArmorIQ as the company reached $300K MRR**, building tailored demos, onboarding customers and partners, and translating their feedback into product improvements.",
+            "**Improved the SDK adoption journey** by instrumenting activation, diagnosing integration failures, and prioritizing documentation and developer experience.",
+            "**Supported customer adoption at ArmorIQ**, building tailored demos, onboarding customers and partners, and translating their feedback into product improvements.",
             "**Organized 20+ events in one year**, including hackathons and technical programs that helped developers explore and build with ArmorIQ.",
             "**Run developer sessions on Twitter/X and Discord**, answer technical and product questions, and bring recurring feedback into product and documentation improvements.",
             "**Own launch planning and developer-facing content**, creating product demos, technical material, AI-assisted launch videos, and outreach around releases.",
@@ -107,20 +106,23 @@ export const work: WorkItem[] = [
   },
   {
     slug: "accelchain-product",
-    title: "Product and developer relations at AccelChain",
+    title: "Product management at AccelChain (Acqui-hired)",
     icon: "rocket",
-    before: "AccelChain needed stronger developer activation, clearer onboarding, and ecosystem products that could turn grant-backed blockchain work into adoption.",
-    after: "In my Product Engineer role, I focused on product planning, developer onboarding, Marketplace, and developer education.",
+    before:
+      "AccelChain needed stronger developer activation, clearer onboarding, and ecosystem products that could turn grant-backed blockchain work into adoption.",
+    after:
+      "In my Product Manager role, I focused on product planning, developer onboarding, Marketplace, and developer education.",
     call: "Use developer feedback, partner requirements, and product data together to decide what to build next.",
-    scope: "Product Engineer · AccelChain · 2024–2025",
+    scope: "Product Manager · AccelChain (Acqui-hired) · 2024–2025",
     category: "Professional experience",
     detailLinkText: "Read the full story →",
     detailTitleSuffix: " · full story",
     hasCase: true,
     full: false,
     caseStudy: {
-      scope: "Product Engineer · Product management and developer relations",
-      intro: "My role at AccelChain combined **product management and developer relations**. I talked to developers, used their feedback to prioritize improvements, and worked with engineering to bring those changes into the platform. I also helped developers get started through documentation, workshops, and the Build Program.",
+      scope: "Product Manager · Product management and developer relations",
+      intro:
+        "My role at AccelChain combined **product management and developer relations**. I talked to developers, used their feedback to prioritize improvements, and worked with engineering to bring those changes into the platform. I also helped developers get started through documentation, workshops, and the Build Program.",
       chapters: [
         {
           title: "Product discovery and priorities",
@@ -130,10 +132,10 @@ export const work: WorkItem[] = [
           ],
         },
         {
-          title: "SDK onboarding and activation",
+          title: "Platform onboarding and activation",
           points: [
-            "**Interviewed 30+ developers and helped improve the SDK setup flow**. The changes reduced integration failures by **30%** and time-to-first-deploy by **35%**.",
-            "**Worked on onboarding guidance and feature sequencing**, helping developers understand the platform and reach their first deployment.",
+            "**Interviewed 30+ developers and helped improve the platform deployment flow**. The team’s changes reduced time-to-first-deploy by **35%**.",
+            "**Worked on deployment guidance and feature sequencing**, helping developers understand the platform and reach their first deployment.",
           ],
         },
         {
@@ -169,8 +171,10 @@ export const work: WorkItem[] = [
     slug: "dapp-world-devrel",
     title: "Developer relations at DApp World",
     icon: "users",
-    before: "A developer community was generating useful feedback that needed to reach the product team.",
-    after: "As DApp World's first DevRel, I built developer programs and support processes, educated 1,200+ developers, and turned community feedback into product improvements.",
+    before:
+      "A developer community was generating useful feedback that needed to reach the product team.",
+    after:
+      "As DApp World's first DevRel, I built developer programs and support processes, educated 1,200+ developers, and turned community feedback into product improvements.",
     call: "Pair developer education and community programs with a consistent feedback loop into product and engineering.",
     scope: "Developer Relations Intern · DApp World · 2023",
     category: "Professional experience",

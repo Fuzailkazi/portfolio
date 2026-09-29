@@ -2,6 +2,18 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { projectStories, projectStoryPage } from "@/content/project-stories";
 
+function renderEmphasis(text: string) {
+  return text.split(/(\*\*.*?\*\*)/g).map((part, index) =>
+    part.startsWith("**") && part.endsWith("**") ? (
+      <strong key={index} className="font-semibold text-text">
+        {part.slice(2, -2)}
+      </strong>
+    ) : (
+      part
+    ),
+  );
+}
+
 export function generateStaticParams() {
   return projectStories.map((story) => ({ slug: story.slug }));
 }
@@ -41,12 +53,12 @@ export default async function ProjectStoryPage(props: PageProps<"/projects/[slug
 
         <div className="mt-8 space-y-4 text-[16px] text-text-2">
           {story.intro.map((paragraph) => (
-            <p key={paragraph}>{paragraph}</p>
+            <p key={paragraph}>{renderEmphasis(paragraph)}</p>
           ))}
         </div>
 
         <blockquote className="mt-6 border-l-2 border-accent pl-4 text-[15px] font-medium text-text">
-          {story.principle}
+          {renderEmphasis(story.principle)}
         </blockquote>
 
         <div className="mt-9 space-y-9">
@@ -56,24 +68,24 @@ export default async function ProjectStoryPage(props: PageProps<"/projects/[slug
               {section.body ? (
                 <div className="mt-3 space-y-3 text-[16px] text-text-2">
                   {section.body.map((paragraph) => (
-                    <p key={paragraph}>{paragraph}</p>
+                    <p key={paragraph}>{renderEmphasis(paragraph)}</p>
                   ))}
                 </div>
               ) : null}
               {section.bullets ? (
                 <ul className="mt-3 list-disc space-y-2 pl-5 text-[16px] text-text-2">
                   {section.bullets.map((bullet) => (
-                    <li key={bullet}>{bullet}</li>
+                    <li key={bullet}>{renderEmphasis(bullet)}</li>
                   ))}
                 </ul>
               ) : null}
               {section.examplesTitle ? (
-                <p className="mt-4 text-[16px] text-text-2">{section.examplesTitle}</p>
+                <p className="mt-4 text-[16px] text-text-2">{renderEmphasis(section.examplesTitle)}</p>
               ) : null}
               {section.examples ? (
                 <ul className="mt-3 list-disc space-y-2 pl-5 text-[16px] text-text-2">
                   {section.examples.map((example) => (
-                    <li key={example}>&ldquo;{example}&rdquo;</li>
+                    <li key={example}>&ldquo;{renderEmphasis(example)}&rdquo;</li>
                   ))}
                 </ul>
               ) : null}

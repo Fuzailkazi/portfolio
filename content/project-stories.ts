@@ -17,10 +17,87 @@ interface ProjectStory {
 }
 
 export const projectStoryPage = {
-  backLabel: "Back to Building",
+  backLabel: "Back to Builds",
 };
 
 export const projectStories: ProjectStory[] = [
+  {
+    slug: "var-room",
+    title: "VAR Room",
+    subtitle:
+      "An agent pipeline that checks football opinions against evidence and returns a cited credibility score",
+    actions: [
+      {
+        label: "View source code",
+        href: "https://github.com/Fuzailkazi/varroom",
+      },
+    ],
+    intro: [
+      "Football debates can collect hundreds of replies without answering the original question. A claim gets met with another opinion, then another, and the thread rarely checks what actually happened.",
+      "I’m building VAR Room as a verification layer for those debates. It breaks an opinion into claims that can be checked, gathers evidence, and returns a verdict instead of adding another unsupported take.",
+      "The first audience is football fans discussing tactics and transfers, along with creators and pundits who want a credibility signal attached to their claims.",
+    ],
+    principle:
+      "A verdict should show the evidence behind it, and say when the evidence is not enough.",
+    sections: [
+      {
+        title: "The product",
+        body: [
+          "A user submits a football opinion. VAR Room checks its individual claims and returns one of three outcomes: Decision stands, Overturned, or Check incomplete. Each review includes citations and a credibility score from 0 to 100.",
+          "The reviews sit inside a discussion feed with posts, votes, and comments, so a checked claim stays connected to the conversation that prompted it.",
+        ],
+      },
+      {
+        title: "Product decisions",
+        bullets: [
+          "**Use live search for current claims.** I evaluated a historical match-data source, but it did not cover current-season statistics or transfer news. The first version uses a web-search agent for recency, while leaving the structured football data tables for a future API integration.",
+          "**Build the review pipeline before the interface.** Each backend feature needs to be testable from the terminal before I build on it. That slows the first demo, but lets me verify the core behavior layer by layer.",
+          "**Keep the first release focused.** The MVP is claim review plus a Reddit-style feed for posts, votes, and comments. Pitch visualizations, debate duels, a transfer-fit mode, and monetization are deferred.",
+          "**Make evidence independent of the model.** Search and database results become numbered evidence entries. Citations are checked against those entries, and claims without support do not contribute to the score.",
+          "**Keep scoring deterministic.** A code-based scoring function calculates the result; the model does not make up a score for claims it cannot verify.",
+          "**Keep infrastructure manageable for a solo build.** The database runs on Neon with separate development and test branches, without adding a local container setup.",
+        ],
+      },
+      {
+        title: "How it works",
+        body: [
+          "A submitted opinion moves through three agents in sequence, each passing structured information to the next:",
+        ],
+        bullets: [
+          "Moderator splits the opinion into individual, falsifiable claims.",
+          "StatsSpecialist checks each claim using available match data and live web search.",
+          "FactChecker assesses the collected evidence and assigns a verdict to each claim.",
+        ],
+        examplesTitle:
+          "The system returns a cited credibility score and a VAR-style decision: Decision stands, Overturned, or Check incomplete.",
+      },
+      {
+        title: "What I’m building",
+        body: [
+          "This is a solo project. I own the product decisions and implementation, using pair-programming tools while reviewing the code and keeping the verification rules explicit.",
+        ],
+        bullets: [
+          "A sequential three-agent pipeline using Google ADK and Gemini",
+          "A review flow that records tool results as citable evidence",
+          "Server-side citation checks and deterministic credibility scoring",
+          "Typed database tools instead of model-generated SQL",
+          "Sign-in and core post, vote, and comment APIs",
+        ],
+      },
+      {
+        title: "What I’m learning",
+        body: [
+          "The agent framework shaped the product design. Agents that return structured output cannot also call tools in the same step, so I separated evidence gathering from evidence judgment. That made the pipeline easier to inspect and helped keep evidence collection distinct from scoring.",
+        ],
+      },
+      {
+        title: "Current status",
+        body: [
+          "VAR Room is in progress. Sign-in and the core debate, voting, and commenting APIs are complete. The agent pipeline, review API, and usage tracing are still being built. The next stage is the frontend for sign-in, claim submission and review, and the discussion feed.",
+        ],
+      },
+    ],
+  },
   {
     slug: "flowtrace",
     title: "FlowTrace",
@@ -340,6 +417,88 @@ export const projectStories: ProjectStory[] = [
           "Live OpenRouter catalog sync covering 500+ models",
           "1-click guest demo mode",
           "191 passing unit tests",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "mutual-fund-advisor",
+    title: "Mutual Fund Advisor Intelligence Suite",
+    subtitle:
+      "A mutual fund assistant that cites its sources, refuses to give advice, and asks for approval before acting",
+    actions: [
+      {
+        label: "Try the live app",
+        href: "https://nl-cap.vercel.app/",
+      },
+      {
+        label: "View source code",
+        href: "https://github.com/Fuzailkazi/nl-cap",
+      },
+    ],
+    intro: [
+      "I started this project after my dad asked me to help him understand mutual fund fees and whether a fund was worth holding. Answering meant searching through factsheets and fine print, then checking whether the information was current.",
+      "I wanted to build the research assistant I was already trying to be for him: one that gives a short answer, shows where it came from, and knows when it should not answer.",
+      "The suite is designed for active investors who need clear, sourced information, and for support or compliance teams who need to review what an assistant says and does.",
+    ],
+    principle:
+      "Every answer needs a source. Every action waits for a person’s approval.",
+    sections: [
+      {
+        title: "The product",
+        body: [
+          "The prototype brings together a source-backed FAQ assistant, tools for understanding investor feedback, and a voice flow for requesting an advisor appointment.",
+          "I kept the first version deliberately narrow: one AMC, HDFC, and four schemes. Its knowledge base uses official scheme pages and information from AMFI and SEBI.",
+        ],
+        bullets: [
+          "The FAQ assistant answers questions from retrieved source material, includes one official citation, and keeps answers to three sentences or fewer.",
+          "The Weekly Pulse summarizes themes from app-store and support reviews, while the Fee Explainer turns scheme information into a short, sourced explanation.",
+          "The voice scheduler can collect a request for an advisor appointment.",
+          "The Approval Centre holds proposed calendar, notes, or email actions until a person approves them.",
+        ],
+      },
+      {
+        title: "Product decisions",
+        bullets: [
+          "**Cite or refuse.** If the answer is not supported by a verified source, the assistant says it does not have one. It refuses requests for personalized investment advice.",
+          "**Keep answers short and checkable.** The assistant uses a fixed response format and can cite only a URL from the retrieved material.",
+          "**Require approval before actions.** Booking and follow-up actions remain pending until a person reviews and approves them.",
+          "**Make the first release small.** I limited the initial source set to one AMC and four schemes so I could focus on answer quality and compliance behavior.",
+          "**Verify sources before relying on them.** The initial source list contained 21 dead URLs; I replaced them with 19 working official pages.",
+          "**Treat evaluation as part of the product.** I wrote checks for retrieval, response structure, and compliance so the team can test whether the assistant follows its rules.",
+        ],
+      },
+      {
+        title: "How it works",
+        body: [
+          "Official pages are collected, split into searchable passages, and stored with their source URLs. When someone asks a question, the system retrieves relevant passages and asks the model for a structured response. Validation checks the format, advice classification, and citation before showing the answer; unsupported responses are replaced with a refusal.",
+          "Review summaries and fee explanations use the same source knowledge base. Voice appointment requests also pass through checks, and any resulting calendar or email action waits in the Approval Centre for a human decision.",
+        ],
+      },
+      {
+        title: "What I owned and built",
+        body: [
+          "I defined the product behavior, compliance rules, response formats, and trade-offs, then built the working prototype and its evaluation checks.",
+        ],
+        bullets: [
+          "Source-backed FAQ assistant and official-page ingestion",
+          "Review analysis, Weekly Pulse, and Fee Explainer",
+          "Voice appointment scheduler",
+          "Approval Centre for proposed actions",
+          "Evaluation suites for retrieval, generation, compliance, and response structure",
+        ],
+      },
+      {
+        title: "What I learned",
+        body: [
+          "A prompt alone cannot guarantee that an assistant will avoid financial advice or provide a valid citation. Those rules need checks in the product flow, with evaluation cases that make failures visible.",
+          "The source material also shaped the product. Verifying the links exposed how easily a polished answer could point to a page that no longer existed, so source quality became part of the experience rather than a background data task.",
+        ],
+      },
+      {
+        title: "Current status",
+        body: [
+          "This is a deployed working prototype. Retrieval, compliance, and response-structure checks were rerun after a model change; generation and injection evaluations still need to be rerun.",
         ],
       },
     ],

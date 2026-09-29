@@ -22,7 +22,6 @@ export default async function NotesPage() {
               {note.title}
             </b>
             <p className="mt-1 text-[13px] text-text-2">{note.excerpt}</p>
-            <span className="mt-[6px] block text-[12px] text-text-3">{note.readTime}</span>
           </Link>
         ))}
       </div>
